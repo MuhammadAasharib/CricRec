@@ -8,6 +8,7 @@ namespace CricRec {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Summary for Login
@@ -121,9 +122,42 @@ namespace CricRec {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		MainWindow^ menu = gcnew MainWindow;
-		Hide();
-		menu->ShowDialog();
+
+		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
+		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from CricRec.admin where userid = '" + this->textBox1->Text + "' and password = '" + this->textBox2->Text + "';", conDataBase);
+		MySqlDataReader^ myReader;
+		try {
+			conDataBase->Open();
+			myReader = cmdDataBase->ExecuteReader();
+
+			int count = 0;
+			while (myReader->Read()) {
+
+				count = count + 1;
+			}
+
+			if (count == 1) {
+				MessageBox::Show("Connected");
+				MainWindow^ menu = gcnew MainWindow;
+				Hide();
+				menu->ShowDialog();
+			}
+
+			else if (count > 1) {
+				MessageBox::Show("Multiple username exist.... so access is denied!");
+			}
+
+			else {
+				MessageBox::Show("Invalid username or password");
+			}
+		}
+		catch (Exception^ex) {
+			MessageBox::Show(ex->Message);
+		}
+
+
 	}
 };
 }
