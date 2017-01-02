@@ -92,6 +92,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -123,6 +125,94 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AddVenue.cpp" />
+    <ClCompile Include="CreatePlayer.cpp" />
+    <ClCompile Include="CreateTournament.cpp" />
+    <ClCompile Include="CreateUmpire.cpp" />
+    <ClCompile Include="FinishedTournament.cpp" />
+    <ClCompile Include="Login.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="OnGoingTournament.cpp" />
+    <ClCompile Include="ViewPlayer.cpp" />
+    <ClCompile Include="ViewTournament.cpp" />
+    <ClCompile Include="ViewVenue.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AddVenue.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CreatePlayer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CreateTournament.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CreateUmpire.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FinishedTournament.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Login.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MainWindow.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="OnGoingTournament.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewPlayer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewTournament.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewVenue.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddVenue.resx">
+      <DependentUpon>AddVenue.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePlayer.resx">
+      <DependentUpon>CreatePlayer.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateTournament.resx">
+      <DependentUpon>CreateTournament.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateUmpire.resx">
+      <DependentUpon>CreateUmpire.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinishedTournament.resx">
+      <DependentUpon>FinishedTournament.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnGoingTournament.resx">
+      <DependentUpon>OnGoingTournament.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPlayer.resx">
+      <DependentUpon>ViewPlayer.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTournament.resx">
+      <DependentUpon>ViewTournament.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewVenue.resx">
+      <DependentUpon>ViewVenue.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
