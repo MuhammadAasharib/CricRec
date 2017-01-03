@@ -43,9 +43,9 @@ namespace CricRec {
 	protected:
 
 	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
+		 //<summary>
+		 //Required designer variable.
+		 //</summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -126,7 +126,7 @@ namespace CricRec {
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from CricRec.admin where userid = '" + this->textBox1->Text + "' and password = '" + this->textBox2->Text + "';", conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from CricRec.admin where username = '" + this->textBox1->Text + "' and password = sha1('" + this->textBox2->Text + "');", conDataBase);
 		MySqlDataReader^ myReader;
 		try {
 			conDataBase->Open();
