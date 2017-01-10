@@ -136,6 +136,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddAdmin.cpp" />
     <ClCompile Include="AddVenue.cpp" />
     <ClCompile Include="CreatePlayer.cpp" />
     <ClCompile Include="CreateTournament.cpp" />
@@ -149,6 +150,9 @@
     <ClCompile Include="ViewVenue.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddAdmin.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AddVenue.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -184,6 +188,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddAdmin.resx">
+      <DependentUpon>AddAdmin.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddVenue.resx">
       <DependentUpon>AddVenue.h</DependentUpon>
     </EmbeddedResource>
