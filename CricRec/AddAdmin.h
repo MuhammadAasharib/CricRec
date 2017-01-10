@@ -128,7 +128,7 @@ namespace CricRec {
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("INSERT INTO cricrec.admin (username, password) values ('" + this->textBox1->Text + "' , '" + this->textBox2->Text + "');", conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("INSERT INTO cricrec.admin (username, password) values ('" + this->textBox1->Text + "' , sha1('" + this->textBox2->Text + "'));", conDataBase);
 		MessageBox::Show("Admin Added Sucessfully");
 
 		MySqlDataReader^ myReader;
