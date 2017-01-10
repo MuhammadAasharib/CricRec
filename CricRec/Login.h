@@ -91,6 +91,7 @@ namespace CricRec {
 			// 
 			this->PassTextBox->Location = System::Drawing::Point(167, 81);
 			this->PassTextBox->Name = L"PassTextBox";
+			this->PassTextBox->PasswordChar = '*';
 			this->PassTextBox->Size = System::Drawing::Size(100, 20);
 			this->PassTextBox->TabIndex = 3;
 			// 
