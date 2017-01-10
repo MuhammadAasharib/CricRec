@@ -128,17 +128,22 @@ namespace CricRec {
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-		String^ Username = textBox1->Text;
-		String^ Password = textBox2->Text;
-
-		conDataBase->Open();
-
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("INSERT INTO admin (username, password) values ('Username' , sha1(Password));", conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("INSERT INTO cricrec.admin (username, password) values ('" + this->textBox1->Text + "' , '" + this->textBox2->Text + "');", conDataBase);
 		MessageBox::Show("Admin Added Sucessfully");
 
-		//////////PROBLEM NOT ADDING ADMIN TO DATABASE
+		MySqlDataReader^ myReader;
+		try {
+			conDataBase->Open();
+			myReader = cmdDataBase->ExecuteReader();
 
-		conDataBase->Close();
+			while (myReader->Read()) {
+
+			}
+		}
+		catch (Exception^ex) {
+			MessageBox::Show(ex->Message);
+		}
+
 	}
 
 	private: System::Void AddAdmin_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
