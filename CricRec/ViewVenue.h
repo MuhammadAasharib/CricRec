@@ -8,6 +8,7 @@ namespace CricRec {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Summary for ViewVenue
@@ -18,6 +19,7 @@ namespace CricRec {
 		ViewVenue(void)
 		{
 			InitializeComponent();
+			fillListBox();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -34,7 +36,11 @@ namespace CricRec {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::ListView^  listView1;
+	private: System::Windows::Forms::ListBox^  listBox1;
+	protected:
+
+
+
 	protected:
 
 	private:
@@ -50,28 +56,55 @@ namespace CricRec {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->SuspendLayout();
 			// 
-			// listView1
+			// listBox1
 			// 
-			this->listView1->Location = System::Drawing::Point(41, 57);
-			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(198, 97);
-			this->listView1->TabIndex = 0;
-			this->listView1->UseCompatibleStateImageBehavior = false;
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->Location = System::Drawing::Point(13, 13);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(333, 225);
+			this->listBox1->TabIndex = 0;
 			// 
 			// ViewVenue
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
-			this->Controls->Add(this->listView1);
+			this->ClientSize = System::Drawing::Size(358, 261);
+			this->Controls->Add(this->listBox1);
 			this->Name = L"ViewVenue";
 			this->Text = L"ViewVenue";
+			this->Load += gcnew System::EventHandler(this, &ViewVenue::ViewVenue_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void ViewVenue_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
+
+	private: void fillListBox(void) {
+		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
+		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.venue;", conDataBase);
+
+		MySqlDataReader^ myReader;
+		try {
+			conDataBase->Open();
+			myReader = cmdDataBase->ExecuteReader();
+
+			while (myReader->Read()) {
+				String^ name;
+				String^ id;
+				id = myReader->GetInt32("Venue_Id").ToString();
+				name = myReader->GetString("Name");
+				listBox1->Items->Add(id +" "+name);
+			}
+		}
+		catch (Exception^ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
 	};
 }
