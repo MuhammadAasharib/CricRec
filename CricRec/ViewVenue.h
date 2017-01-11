@@ -93,13 +93,13 @@ namespace CricRec {
 		try {
 			conDataBase->Open();
 			myReader = cmdDataBase->ExecuteReader();
-
+			listBox1->Items->Add("id" + "	" + "name");
 			while (myReader->Read()) {
 				String^ name;
 				String^ id;
 				id = myReader->GetInt32("Venue_Id").ToString();
 				name = myReader->GetString("Name");
-				listBox1->Items->Add(id +" "+name);
+				listBox1->Items->Add(id + "	" +name);
 			}
 		}
 		catch (Exception^ex) {
