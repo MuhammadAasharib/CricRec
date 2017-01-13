@@ -88,33 +88,33 @@ namespace CricRec {
 		try {
 			conDataBase->Open();
 			myReader = cmdDataBase->ExecuteReader();
-			listBox1->Items->Add("Id" + "	" + "Name" + "	" + "Team" + "	" + "Type" + "	" + "BatAvg" +
-				"Catches" + "	" + "Runs" + "	" + "StrRate" + "	" + "PreBatHand" + "	" + "PreBowHand" +
+			listBox1->Items->Add("Id" + "	" + "Name" + "		" + "Team" + "	" + "Type" + "	" + "BatAvg" + "	"
+				"Catches" + "	" + "Runs" + "	" + "StrRate" + "	" + "PreBatHand" + "	" + "PreBowHand" + "	"
 				"Fifty" + "    " + "Hundered" + "	" + "RunOut" + "	" + "Economy" + "	" + "Wickets" +
 				"	" + "Stumps" + "	" + "Age");
 			while (myReader->Read()) {
 				
 				String^ id = myReader->GetInt32("Player_Id").ToString();
 				String^ name = myReader->GetString("Name");
-				String^ team = myReader->GetString("Team_Id");
-				String^ type = myReader->GetString("Player_Type_Id");
-				String^ batAvg = myReader->GetString("Batting_Avg");
-				String^ catches = myReader->GetString("catches");
-				String^ runs = myReader->GetString("runs");
-				String^ strRate = myReader->GetString("Strike_Rate");
-				String^ preBatHand = myReader->GetString("Preffered_Batting_Hand");
-				String^ preBowHand = myReader->GetString("Preffered_Bowling_Hand");
-				String^ fifty = myReader->GetString("fifties");
-				String^ hundered = myReader->GetString("Hundred");
-				String^ runOut = myReader->GetString("RunOut");
-				String^ economy = myReader->GetString("Economy");
-				String^ wickets = myReader->GetString("Wickets");
-				String^ stumps = myReader->GetString("Stumps");
-				String^ age = myReader->GetString("age");
+				String^ team = myReader->GetInt32("Team_Id").ToString();
+				String^ type = myReader->GetInt32("Player_Type_Id").ToString();
+				String^ batAvg = myReader->GetFloat("Batting_Avg").ToString();
+				String^ catches = myReader->GetFloat("catches").ToString();
+				String^ runs = myReader->GetInt32("runs").ToString();
+				String^ strRate = myReader->GetFloat("Strike_Rate").ToString();
+				String^ preBatHand = myReader->GetChar("Preffered_Batting_Hand").ToString();
+				String^ preBowHand = myReader->GetChar("Preffered_Bowling_Hand").ToString();
+				String^ fifty = myReader->GetInt32("fifties").ToString();
+				String^ hundered = myReader->GetInt32("Hundred").ToString();
+				String^ runOut = myReader->GetInt32("RunOut").ToString();
+				String^ economy = myReader->GetFloat("Economy").ToString();
+				String^ wickets = myReader->GetInt32("Wickets").ToString();
+				String^ stumps = myReader->GetInt32("Stumps").ToString();
+				String^ age = myReader->GetInt32("age").ToString();
 
-				listBox1->Items->Add(id + "	  " + name + "	 " + team + "   " + type + "    " + batAvg + 
-					catches +  "	" + runs +  "	" + strRate +  "	" + preBatHand  +  "	" + preBowHand + 
-					fifty + "	" + hundered + "	" + runOut + "	 " + economy +  "	 " + wickets + 
+				listBox1->Items->Add(id + "	  " + name + "	 " + team + "	" + type + "	" + batAvg + "	 "+
+					catches +  "	" + runs +  "	" + strRate +  "	" + preBatHand  +  "		" + preBowHand + 
+					" 		"+ fifty + "	" + hundered + "	" + runOut + "	 " + economy +  "	 " + wickets + 
 					"	" + stumps +  "	  " + age);
 			}
 		}
