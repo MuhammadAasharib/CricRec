@@ -99,7 +99,7 @@ namespace CricRec {
 		String^ selectedTournament = comboBox1->SelectedItem->ToString();
 
 		if (selectedTournament != "") {
-			SelectedTouranament^ form = gcnew SelectedTouranament;
+			SelectedTouranament^ form = gcnew SelectedTouranament(selectedTournament);
 			Hide();
 			form->ShowDialog();
 		}

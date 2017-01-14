@@ -4,7 +4,7 @@
 #include "CreatePlayer.h"
 #include "CreateUmpire.h"
 #include "ViewTournament.h"
-#include "ViewPlayer.h"
+#include "ViewPlayer1.h"
 #include "ViewVenue.h"
 namespace CricRec {
 
@@ -203,7 +203,7 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 	Show();
 }
 private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
-	ViewPlayer^ form = gcnew ViewPlayer;
+	ViewPlayer1^ form = gcnew ViewPlayer1;
 	Hide();
 	form->ShowDialog();
 	Show();
