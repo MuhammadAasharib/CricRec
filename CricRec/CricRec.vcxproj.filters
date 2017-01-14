@@ -51,6 +51,9 @@
     <ClInclude Include="AddAdmin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SelectedTouranament.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Login.cpp">
@@ -89,6 +92,9 @@
     <ClCompile Include="AddAdmin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SelectedTouranament.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddVenue.resx">
@@ -122,6 +128,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewVenue.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAdmin.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

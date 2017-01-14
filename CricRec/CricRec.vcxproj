@@ -145,6 +145,7 @@
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="OnGoingTournament.cpp" />
+    <ClCompile Include="SelectedTouranament.cpp" />
     <ClCompile Include="ViewPlayer.cpp" />
     <ClCompile Include="ViewTournament.cpp" />
     <ClCompile Include="ViewVenue.cpp" />
@@ -175,6 +176,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="OnGoingTournament.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SelectedTouranament.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ViewPlayer.h">
@@ -214,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OnGoingTournament.resx">
       <DependentUpon>OnGoingTournament.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectedTouranament.resx">
+      <DependentUpon>SelectedTouranament.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewPlayer.resx">
       <DependentUpon>ViewPlayer.h</DependentUpon>
