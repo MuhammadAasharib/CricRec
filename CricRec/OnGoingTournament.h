@@ -1,4 +1,5 @@
 #pragma once
+#include "SelectedTouranament.h"
 
 namespace CricRec {
 
@@ -95,7 +96,14 @@ namespace CricRec {
 	private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		
+		String^ selectedTournament = comboBox1->SelectedItem->ToString();
+
+		if (selectedTournament != "") {
+			SelectedTouranament^ form = gcnew SelectedTouranament;
+			Hide();
+			form->ShowDialog();
+		}
+
 	}
 
 	private: void fillListBox(void) {
