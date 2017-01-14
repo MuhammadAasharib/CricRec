@@ -1,4 +1,5 @@
 #pragma once
+#include "MakeTeam.h"
 
 namespace CricRec {
 
@@ -67,6 +68,7 @@ namespace CricRec {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Make Team";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &CreateTournament::button1_Click);
 			// 
 			// button2
 			// 
@@ -110,5 +112,11 @@ namespace CricRec {
 
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		MakeTeam^ form = gcnew MakeTeam;
+		Hide();
+		form->ShowDialog();
+		Show();
+	}
 	};
 }

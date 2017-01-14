@@ -144,9 +144,9 @@
     <ClCompile Include="FinishedTournament.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="MakeTeam.cpp" />
     <ClCompile Include="OnGoingTournament.cpp" />
     <ClCompile Include="SelectedTouranament.cpp" />
-    <ClCompile Include="ViewPlayer.cpp" />
     <ClCompile Include="ViewPlayer1.cpp" />
     <ClCompile Include="ViewTournament.cpp" />
     <ClCompile Include="ViewVenue.cpp" />
@@ -176,13 +176,13 @@
     <ClInclude Include="MainWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MakeTeam.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="OnGoingTournament.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="SelectedTouranament.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ViewPlayer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ViewPlayer1.h">
@@ -220,14 +220,14 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MakeTeam.resx">
+      <DependentUpon>MakeTeam.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OnGoingTournament.resx">
       <DependentUpon>OnGoingTournament.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectedTouranament.resx">
       <DependentUpon>SelectedTouranament.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewPlayer.resx">
-      <DependentUpon>ViewPlayer.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewPlayer1.resx">
       <DependentUpon>ViewPlayer1.h</DependentUpon>
