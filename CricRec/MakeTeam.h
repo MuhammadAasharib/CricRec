@@ -19,8 +19,8 @@ namespace CricRec {
 		MakeTeam(void)
 		{
 			InitializeComponent();
-			fillListBox();
-			teamAddedPlayer(textBox1->Text);
+			fillListBox2();
+			fillListBox3();
 
 			//
 			//TODO: Add the constructor code here
@@ -82,6 +82,9 @@ namespace CricRec {
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::TextBox^  textBox2;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::Button^  button3;
 
 	private:
 		/// <summary>
@@ -138,12 +141,15 @@ namespace CricRec {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(261, 19);
+			this->label1->Location = System::Drawing::Point(225, 19);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(65, 13);
 			this->label1->TabIndex = 0;
@@ -262,6 +268,7 @@ namespace CricRec {
 			this->button1->TabIndex = 7;
 			this->button1->Text = L"Done";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MakeTeam::button1_Click);
 			// 
 			// listView3
 			// 
@@ -346,7 +353,7 @@ namespace CricRec {
 			// 
 			this->label4->AllowDrop = true;
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(264, 53);
+			this->label4->Location = System::Drawing::Point(197, 53);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(123, 13);
 			this->label4->TabIndex = 9;
@@ -369,11 +376,40 @@ namespace CricRec {
 			this->textBox2->Size = System::Drawing::Size(161, 20);
 			this->textBox2->TabIndex = 11;
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(148, 83);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(221, 13);
+			this->label5->TabIndex = 12;
+			this->label5->Text = L"ID of Player to be Deleted from selected team";
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(395, 83);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(161, 20);
+			this->textBox3->TabIndex = 13;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(618, 83);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->TabIndex = 14;
+			this->button3->Text = L"Delete";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MakeTeam::button3_Click);
+			// 
 			// MakeTeam
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(939, 324);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label4);
@@ -392,7 +428,49 @@ namespace CricRec {
 
 		}
 
-	private: void teamAddedPlayer(String^ name) {
+	private: void fillListBox3(void) {
+		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
+		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.player where Team_Id = (select Team_Id from cricrec.Team Where Team_Name = '"+textBox1->Text+"');", conDataBase);
+
+		MySqlDataReader^ myReader;
+		try {
+			conDataBase->Open();
+			myReader = cmdDataBase->ExecuteReader();
+
+			while (myReader->Read()) {
+
+				String^ id = myReader->GetInt32("Player_Id").ToString();
+				String^ name = myReader->GetString("Name");
+				//String^ team = myReader->GetInt32("Team_Id").ToString();
+				String^ type = myReader->GetInt32("Player_Type_Id").ToString();
+				String^ batAvg = myReader->GetFloat("Batting_Avg").ToString();
+				String^ catches = myReader->GetFloat("catches").ToString();
+				String^ runs = myReader->GetInt32("runs").ToString();
+				String^ strRate = myReader->GetFloat("Strike_Rate").ToString();
+				String^ preBatHand = myReader->GetChar("Preffered_Batting_Hand").ToString();
+				String^ preBowHand = myReader->GetChar("Preffered_Bowling_Hand").ToString();
+				String^ fifty = myReader->GetInt32("fifties").ToString();
+				String^ hundered = myReader->GetInt32("Hundred").ToString();
+				String^ runOut = myReader->GetInt32("RunOut").ToString();
+				String^ economy = myReader->GetFloat("Economy").ToString();
+				String^ wickets = myReader->GetInt32("Wickets").ToString();
+				String^ stumps = myReader->GetInt32("Stumps").ToString();
+				String^ age = myReader->GetInt32("age").ToString();
+
+				auto item = gcnew ListViewItem(gcnew array<String^> { id, name, type, batAvg, catches, runs, strRate, preBatHand, preBowHand, fifty, hundered, runOut, economy, wickets, stumps, age});
+				listView3->Items->Add(item);
+
+				//listView1->Items->Add(id + "	  " + name + "	 " + startDate + "	" + endDate + "	" + matchTypeId);
+			}
+		}
+		catch (Exception^ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+
+	private: void teamAddedPlayer(void) {
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
@@ -435,11 +513,50 @@ namespace CricRec {
 		}
 	}
 
-	private: void fillListBox(void) {
+		private: void teamDeletePlayer() {
+			String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
+			MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+
+			MySqlCommand^ cmdDataBase = gcnew MySqlCommand("update cricrec.player set Team_Id = NULL where player_Id = '" + textBox3->Text + "');", conDataBase);
+			//MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.player where Team_Id = 1;", conDataBase);
+
+			//MySqlDataReader^ myReader;
+			//try {
+			//	conDataBase->Open();
+			//	myReader = cmdDataBase->ExecuteReader();
+			//	while (myReader->Read()) {
+			//		String^ id = myReader->GetInt32("Player_Id").ToString();
+			//		String^ name = myReader->GetString("Name");
+			//		//String^ team = myReader->GetInt32("Team_Id").ToString();
+			//		String^ type = myReader->GetInt32("Player_Type_Id").ToString();
+			//		String^ batAvg = myReader->GetFloat("Batting_Avg").ToString();
+			//		String^ catches = myReader->GetFloat("catches").ToString();
+			//		String^ runs = myReader->GetInt32("runs").ToString();
+			//		String^ strRate = myReader->GetFloat("Strike_Rate").ToString();
+			//		String^ preBatHand = myReader->GetChar("Preffered_Batting_Hand").ToString();
+			//		String^ preBowHand = myReader->GetChar("Preffered_Bowling_Hand").ToString();
+			//		String^ fifty = myReader->GetInt32("fifties").ToString();
+			//		String^ hundered = myReader->GetInt32("Hundred").ToString();
+			//		String^ runOut = myReader->GetInt32("RunOut").ToString();
+			//		String^ economy = myReader->GetFloat("Economy").ToString();
+			//		String^ wickets = myReader->GetInt32("Wickets").ToString();
+			//		String^ stumps = myReader->GetInt32("Stumps").ToString();
+			//		String^ age = myReader->GetInt32("age").ToString();
+			//		auto item = gcnew ListViewItem(gcnew array<String^> { id, name, type, batAvg, catches, runs, strRate, preBatHand, preBowHand, fifty, hundered, runOut, economy, wickets, stumps, age});
+			//		listView3->Items->Add(item);
+			//		//listView1->Items->Add(id + "	  " + name + "	 " + startDate + "	" + endDate + "	" + matchTypeId);
+			//	}
+			//}
+			//catch (Exception^ex) {
+			//	MessageBox::Show(ex->Message);
+			//}
+		}
+
+	private: void fillListBox2(void) {
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.player where Team_Id is not NULL;", conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.player where Team_Id is NULL;", conDataBase);
 
 		MySqlDataReader^ myReader;
 		try {
@@ -476,7 +593,6 @@ namespace CricRec {
 			MessageBox::Show(ex->Message);
 		}
 	}
-
 
 	private: void insertPlayerTeamId(String^ id, String^ playerId) {
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
@@ -510,9 +626,33 @@ namespace CricRec {
 				String^ age = myReader->GetInt32("age").ToString();
 
 				auto item = gcnew ListViewItem(gcnew array<String^> { id, name, type, batAvg, catches, runs, strRate, preBatHand, preBowHand, fifty, hundered, runOut, economy, wickets, stumps, age});
-				listView2->Items->Add(item);
+				listView3->Items->Add(item);
 
-				//listView1->Items->Add(id + "	  " + name + "	 " + startDate + "	" + endDate + "	" + matchTypeId);
+				
+			}
+		}
+		catch (Exception^ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+
+	private: void countPlayersConstrainAtEnd() {
+		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
+		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select Team_Id, count(Player_Id) from cricrec.player group BY Team_Id having Team_Id = (select Team_Id from cricrec.team where team_name = '" + textBox1->Text + "');", conDataBase);
+		MySqlDataReader^ myReader;
+		try {
+			conDataBase->Open();
+			myReader = cmdDataBase->ExecuteReader();
+
+			while (myReader->Read()) {
+				String^ teamId = myReader->GetString("Team_Id");
+				int playerCount = myReader->GetInt32("count(Player_Id)");
+
+				if (playerCount < 11 || playerCount>16) {
+					MessageBox::Show("Team cannot have '" + playerCount + "' number of Player");
+				}
+				else MessageBox::Show("Team Created Successfully!");
 			}
 		}
 		catch (Exception^ex) {
@@ -520,17 +660,39 @@ namespace CricRec {
 		}
 	}
 #pragma endregion
+
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-		fillListBox();
-		teamAddedPlayer(textBox1->Text);
 
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select Team_Id from cricrec.Team where Team_Name = '"+textBox1->Text+"';", conDataBase);
+		//checking whether team has correct number of players
+		MySqlCommand^ cmdDataBase1 = gcnew MySqlCommand("select Team_Id, count(Player_Id) from cricrec.player group BY Team_Id having Team_Id = (select Team_Id from cricrec.team where team_name = '" + textBox1->Text + "');", conDataBase);
 		MySqlDataReader^ myReader;
 		try {
 			conDataBase->Open();
+			myReader = cmdDataBase1->ExecuteReader();
+
+			while (myReader->Read()) {
+				String^ teamId = myReader->GetString("Team_Id");
+				int playerCount = myReader->GetInt32("count(Player_Id)");
+
+				if (playerCount>16) {
+					MessageBox::Show("Team cannot have '" + playerCount + "' number of Player");
+					return;
+				}
+
+			}
+			myReader->Close();
+		}
+		catch (Exception^ex) {
+			MessageBox::Show(ex->Message);
+		}
+
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select Team_Id from cricrec.Team where Team_Name = '"+textBox1->Text+"';", conDataBase);
+		//MySqlDataReader^ myReader;
+		try {
+			//conDataBase->Open();
 			myReader = cmdDataBase->ExecuteReader();
 
 			while (myReader->Read()) {
@@ -542,10 +704,24 @@ namespace CricRec {
 			MessageBox::Show(ex->Message);
 		}
 
+		fillListBox2();	//adds values to the Store of Player
+		teamAddedPlayer();	//adds values to the Team
 
 	}
+
 private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 	String^ name = textBox1->Text;
+}
+
+
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	countPlayersConstrainAtEnd();
+}
+
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	teamDeletePlayer();
+	fillListBox3();
+	fillListBox2();
 }
 };
 }
