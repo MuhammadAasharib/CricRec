@@ -19,8 +19,8 @@ namespace CricRec {
 		MakeTeam(void)
 		{
 			InitializeComponent();
-			fillListBox2();
-			fillListBox3();
+			/*fillListBox2();
+			fillListBox3();*/
 
 			//
 			//TODO: Add the constructor code here
@@ -85,6 +85,7 @@ namespace CricRec {
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::TextBox^  textBox3;
 	private: System::Windows::Forms::Button^  button3;
+	private: System::Windows::Forms::Button^  button4;
 
 	private:
 		/// <summary>
@@ -144,6 +145,7 @@ namespace CricRec {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -402,11 +404,22 @@ namespace CricRec {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MakeTeam::button3_Click);
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(618, 19);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->TabIndex = 15;
+			this->button4->Text = L"Refresh";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MakeTeam::button4_Click);
+			// 
 			// MakeTeam
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(939, 324);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->label5);
@@ -429,6 +442,7 @@ namespace CricRec {
 		}
 
 	private: void fillListBox3(void) {
+		listView3->Items->Clear();
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
@@ -461,7 +475,6 @@ namespace CricRec {
 
 				auto item = gcnew ListViewItem(gcnew array<String^> { id, name, type, batAvg, catches, runs, strRate, preBatHand, preBowHand, fifty, hundered, runOut, economy, wickets, stumps, age});
 				listView3->Items->Add(item);
-
 				//listView1->Items->Add(id + "	  " + name + "	 " + startDate + "	" + endDate + "	" + matchTypeId);
 			}
 		}
@@ -471,6 +484,7 @@ namespace CricRec {
 	}
 
 	private: void teamAddedPlayer(void) {
+		listView3->Items->Clear();
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
@@ -513,7 +527,7 @@ namespace CricRec {
 		}
 	}
 
-		private: void teamDeletePlayer() {
+	private: void teamDeletePlayer() {
 			String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 			MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
@@ -553,6 +567,7 @@ namespace CricRec {
 		}
 
 	private: void fillListBox2(void) {
+		listView2->Items->Clear();
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
@@ -584,6 +599,7 @@ namespace CricRec {
 				String^ age = myReader->GetInt32("age").ToString();
 
 				auto item = gcnew ListViewItem(gcnew array<String^> { id, name, type, batAvg, catches, runs, strRate, preBatHand, preBowHand, fifty, hundered, runOut, economy, wickets, stumps, age});
+				//listView2->Items->Clear();
 				listView2->Items->Add(item);
 
 				//listView1->Items->Add(id + "	  " + name + "	 " + startDate + "	" + endDate + "	" + matchTypeId);
@@ -662,7 +678,8 @@ namespace CricRec {
 #pragma endregion
 
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-
+		listView2->Items->Clear();
+		listView3->Items->Clear();
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
@@ -681,7 +698,7 @@ namespace CricRec {
 					MessageBox::Show("Team cannot have '" + playerCount + "' number of Player");
 					return;
 				}
-
+				
 			}
 			myReader->Close();
 		}
@@ -698,6 +715,7 @@ namespace CricRec {
 			while (myReader->Read()) {
 				String^ teamId = myReader->GetString("Team_Id");
 				insertPlayerTeamId(teamId, textBox2->Text);
+				//break;
 			}
 		}
 		catch (Exception^ex) {
@@ -705,6 +723,7 @@ namespace CricRec {
 		}
 
 		fillListBox2();	//adds values to the Store of Player
+		fillListBox3();
 		teamAddedPlayer();	//adds values to the Team
 
 	}
@@ -722,6 +741,10 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 	teamDeletePlayer();
 	fillListBox3();
 	fillListBox2();
+}
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+	fillListBox2();
+	fillListBox3();
 }
 };
 }
