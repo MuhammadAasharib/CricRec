@@ -396,7 +396,7 @@ namespace CricRec {
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.player where Team_Id in (select Team_Id from cricrec.Team where Name = '"+ name+"');", conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.player where Team_Id in (select Team_Id from cricrec.Team where Team_Name = '"+ textBox1->Text+"');", conDataBase);
 		//MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.player where Team_Id = 1;", conDataBase);
 
 		MySqlDataReader^ myReader;
@@ -527,7 +527,7 @@ namespace CricRec {
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select Team_Id from cricrec.Team where Name = '"+textBox1->Text+"';", conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select Team_Id from cricrec.Team where Team_Name = '"+textBox1->Text+"';", conDataBase);
 		MySqlDataReader^ myReader;
 		try {
 			conDataBase->Open();
