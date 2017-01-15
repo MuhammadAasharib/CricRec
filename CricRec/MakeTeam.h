@@ -16,9 +16,22 @@ namespace CricRec {
 	public ref class MakeTeam : public System::Windows::Forms::Form
 	{
 	public:
+		String^ torID;
 		MakeTeam(void)
 		{
 			InitializeComponent();
+			/*fillListBox2();
+			fillListBox3();*/
+
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
+		MakeTeam(String^ TournamentId)
+		{
+			InitializeComponent();
+			torID = TournamentId;
 			/*fillListBox2();
 			fillListBox3();*/
 
@@ -86,6 +99,8 @@ namespace CricRec {
 	private: System::Windows::Forms::TextBox^  textBox3;
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Button^  button4;
+	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::TextBox^  textBox4;
 
 	private:
 		/// <summary>
@@ -146,6 +161,8 @@ namespace CricRec {
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -173,9 +190,9 @@ namespace CricRec {
 					this->columnHeader9, this->columnHeader10, this->columnHeader11, this->columnHeader12, this->columnHeader13, this->columnHeader14,
 					this->columnHeader15, this->columnHeader16
 			});
-			this->listView2->Location = System::Drawing::Point(530, 135);
+			this->listView2->Location = System::Drawing::Point(530, 168);
 			this->listView2->Name = L"listView2";
-			this->listView2->Size = System::Drawing::Size(397, 177);
+			this->listView2->Size = System::Drawing::Size(397, 144);
 			this->listView2->TabIndex = 4;
 			this->listView2->UseCompatibleStateImageBehavior = false;
 			this->listView2->View = System::Windows::Forms::View::Details;
@@ -247,7 +264,7 @@ namespace CricRec {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(705, 119);
+			this->label2->Location = System::Drawing::Point(701, 152);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(82, 13);
 			this->label2->TabIndex = 5;
@@ -256,7 +273,7 @@ namespace CricRec {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(148, 119);
+			this->label3->Location = System::Drawing::Point(135, 152);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(70, 13);
 			this->label3->TabIndex = 6;
@@ -280,9 +297,9 @@ namespace CricRec {
 					this->columnHeader25, this->columnHeader26, this->columnHeader27, this->columnHeader28, this->columnHeader29, this->columnHeader30,
 					this->columnHeader31, this->columnHeader32
 			});
-			this->listView3->Location = System::Drawing::Point(12, 135);
+			this->listView3->Location = System::Drawing::Point(12, 168);
 			this->listView3->Name = L"listView3";
-			this->listView3->Size = System::Drawing::Size(400, 177);
+			this->listView3->Size = System::Drawing::Size(400, 144);
 			this->listView3->TabIndex = 8;
 			this->listView3->UseCompatibleStateImageBehavior = false;
 			this->listView3->View = System::Windows::Forms::View::Details;
@@ -355,7 +372,7 @@ namespace CricRec {
 			// 
 			this->label4->AllowDrop = true;
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(197, 53);
+			this->label4->Location = System::Drawing::Point(197, 88);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(123, 13);
 			this->label4->TabIndex = 9;
@@ -363,7 +380,7 @@ namespace CricRec {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(618, 53);
+			this->button2->Location = System::Drawing::Point(618, 85);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 10;
@@ -373,7 +390,7 @@ namespace CricRec {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(395, 53);
+			this->textBox2->Location = System::Drawing::Point(395, 85);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(161, 20);
 			this->textBox2->TabIndex = 11;
@@ -381,7 +398,7 @@ namespace CricRec {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(148, 83);
+			this->label5->Location = System::Drawing::Point(150, 119);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(221, 13);
 			this->label5->TabIndex = 12;
@@ -389,14 +406,14 @@ namespace CricRec {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(395, 83);
+			this->textBox3->Location = System::Drawing::Point(395, 119);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(161, 20);
 			this->textBox3->TabIndex = 13;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(618, 83);
+			this->button3->Location = System::Drawing::Point(618, 119);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 14;
@@ -414,11 +431,29 @@ namespace CricRec {
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &MakeTeam::button4_Click);
 			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(235, 51);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(46, 13);
+			this->label6->TabIndex = 16;
+			this->label6->Text = L"Team Id";
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(395, 48);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(161, 20);
+			this->textBox4->TabIndex = 17;
+			// 
 			// MakeTeam
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(939, 324);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->label6);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->textBox3);
@@ -711,6 +746,23 @@ namespace CricRec {
 		try {
 			//conDataBase->Open();
 			myReader = cmdDataBase->ExecuteReader();
+
+			while (myReader->Read()) {
+				String^ teamId = myReader->GetString("Team_Id");
+				insertPlayerTeamId(teamId, textBox2->Text);
+				//break;
+			}
+		}
+		catch (Exception^ex) {
+			MessageBox::Show(ex->Message);
+		}
+
+
+		MySqlCommand^ cmdDataBase2 = gcnew MySqlCommand("insert into tournament_teams (Touranament_Id, Team_Id)values()'" + torID+ "';", conDataBase);
+		//MySqlDataReader^ myReader;
+		try {
+			//conDataBase->Open();
+			myReader = cmdDataBase2->ExecuteReader();
 
 			while (myReader->Read()) {
 				String^ teamId = myReader->GetString("Team_Id");

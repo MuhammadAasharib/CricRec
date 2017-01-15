@@ -195,8 +195,6 @@ namespace CricRec {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 
-
-
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
