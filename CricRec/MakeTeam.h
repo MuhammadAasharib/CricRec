@@ -566,7 +566,7 @@ namespace CricRec {
 			String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 			MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-			MySqlCommand^ cmdDataBase = gcnew MySqlCommand("update cricrec.player set Team_Id = NULL where player_Id = '" + textBox3->Text + "';", conDataBase);
+			MySqlCommand^ cmdDataBase = gcnew MySqlCommand("update cricrec.player set Team_Id = '0' where player_Id = '" + textBox3->Text + "';", conDataBase);
 			//MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.player where Team_Id = 1;", conDataBase);
 
 			MySqlDataReader^ myReader;

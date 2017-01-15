@@ -216,10 +216,13 @@ namespace CricRec {
 					 String^ age = myReader->GetInt32("age").ToString();
 
 					 auto item = gcnew ListViewItem(gcnew array<String^> { id, name, team, type, batAvg, catches, runs, strRate, preBatHand, preBowHand, fifty, hundered, runOut, economy, wickets, stumps, age});
-					 listView1->Items->Add(item);
+				//	 if (item != "NULL") {
+						 listView1->Items->Add(item);
+					// }
 
 					 //listView1->Items->Add(id + "	  " + name + "	 " + startDate + "	" + endDate + "	" + matchTypeId);
 				 }
+				 myReader->Close();
 			 }
 			 catch (Exception^ex) {
 				 MessageBox::Show(ex->Message);
