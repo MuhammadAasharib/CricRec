@@ -566,39 +566,20 @@ namespace CricRec {
 			String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 			MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-			MySqlCommand^ cmdDataBase = gcnew MySqlCommand("update cricrec.player set Team_Id = NULL where player_Id = '" + textBox3->Text + "');", conDataBase);
+			MySqlCommand^ cmdDataBase = gcnew MySqlCommand("update cricrec.player set Team_Id = NULL where player_Id = '" + textBox3->Text + "';", conDataBase);
 			//MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.player where Team_Id = 1;", conDataBase);
 
-			//MySqlDataReader^ myReader;
-			//try {
-			//	conDataBase->Open();
-			//	myReader = cmdDataBase->ExecuteReader();
-			//	while (myReader->Read()) {
-			//		String^ id = myReader->GetInt32("Player_Id").ToString();
-			//		String^ name = myReader->GetString("Name");
-			//		//String^ team = myReader->GetInt32("Team_Id").ToString();
-			//		String^ type = myReader->GetInt32("Player_Type_Id").ToString();
-			//		String^ batAvg = myReader->GetFloat("Batting_Avg").ToString();
-			//		String^ catches = myReader->GetFloat("catches").ToString();
-			//		String^ runs = myReader->GetInt32("runs").ToString();
-			//		String^ strRate = myReader->GetFloat("Strike_Rate").ToString();
-			//		String^ preBatHand = myReader->GetChar("Preffered_Batting_Hand").ToString();
-			//		String^ preBowHand = myReader->GetChar("Preffered_Bowling_Hand").ToString();
-			//		String^ fifty = myReader->GetInt32("fifties").ToString();
-			//		String^ hundered = myReader->GetInt32("Hundred").ToString();
-			//		String^ runOut = myReader->GetInt32("RunOut").ToString();
-			//		String^ economy = myReader->GetFloat("Economy").ToString();
-			//		String^ wickets = myReader->GetInt32("Wickets").ToString();
-			//		String^ stumps = myReader->GetInt32("Stumps").ToString();
-			//		String^ age = myReader->GetInt32("age").ToString();
-			//		auto item = gcnew ListViewItem(gcnew array<String^> { id, name, type, batAvg, catches, runs, strRate, preBatHand, preBowHand, fifty, hundered, runOut, economy, wickets, stumps, age});
-			//		listView3->Items->Add(item);
-			//		//listView1->Items->Add(id + "	  " + name + "	 " + startDate + "	" + endDate + "	" + matchTypeId);
-			//	}
-			//}
-			//catch (Exception^ex) {
-			//	MessageBox::Show(ex->Message);
-			//}
+			MySqlDataReader^ myReader;
+			try {
+				conDataBase->Open();
+				myReader = cmdDataBase->ExecuteReader();
+				while (myReader->Read()) {
+
+				}
+			}
+			catch (Exception^ex) {
+				MessageBox::Show(ex->Message);
+			}
 		}
 
 	private: void fillListBox2(void) {
@@ -740,11 +721,11 @@ namespace CricRec {
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
 		//checking whether team has correct number of players
-		MySqlCommand^ cmdDataBase1 = gcnew MySqlCommand("select Team_Id, count(Player_Id) from cricrec.player group BY Team_Id having Team_Id = (select Team_Id from cricrec.team where team_name = '" + textBox1->Text + "');", conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select Team_Id, count(Player_Id) from cricrec.player group BY Team_Id having Team_Id = (select Team_Id from cricrec.team where team_name = '" + textBox1->Text + "');", conDataBase);
 		MySqlDataReader^ myReader;
 		try {
 			conDataBase->Open();
-			myReader = cmdDataBase1->ExecuteReader();
+			myReader = cmdDataBase->ExecuteReader();
 
 			while (myReader->Read()) {
 				String^ teamId = myReader->GetString("Team_Id");
@@ -753,8 +734,7 @@ namespace CricRec {
 				if (playerCount>16) {
 					MessageBox::Show("Team cannot have '" + playerCount + "' number of Player");
 					return;
-				}
-				
+				}	
 			}
 			myReader->Close();
 		}
@@ -762,38 +742,40 @@ namespace CricRec {
 			MessageBox::Show(ex->Message);
 		}
 
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select Team_Id from cricrec.Team where Team_Name = '"+textBox1->Text+"';", conDataBase);
+		MySqlCommand^ cmdDataBase1 = gcnew MySqlCommand("select Team_Id from cricrec.Team where Team_Name = '"+textBox1->Text+"';", conDataBase);
 		//MySqlDataReader^ myReader;
 		try {
 			//conDataBase->Open();
-			myReader = cmdDataBase->ExecuteReader();
+			myReader = cmdDataBase1->ExecuteReader();
 
 			while (myReader->Read()) {
 				String^ teamId = myReader->GetString("Team_Id");
 				insertPlayerTeamId(teamId, textBox2->Text);
 				//break;
 			}
+			myReader->Close();
 		}
 		catch (Exception^ex) {
 			MessageBox::Show(ex->Message);
 		}
 
 
-		MySqlCommand^ cmdDataBase2 = gcnew MySqlCommand("insert into tournament_teams (Touranament_Id, Team_Id)values()'" + torID+ "';", conDataBase);
-		//MySqlDataReader^ myReader;
-		try {
-			//conDataBase->Open();
-			myReader = cmdDataBase2->ExecuteReader();
+		//MySqlCommand^ cmdDataBase2 = gcnew MySqlCommand("insert into cricrec.tournament_teams (Touranament_Id, Team_Id)values('" + torID+ "',);", conDataBase);
+		////MySqlDataReader^ myReader;
+		//try {
+		//	//conDataBase->Open();
+		//	myReader = cmdDataBase2->ExecuteReader();
 
-			while (myReader->Read()) {
-				String^ teamId = myReader->GetString("Team_Id");
-				insertPlayerTeamId(teamId, textBox2->Text);
-				//break;
-			}
-		}
-		catch (Exception^ex) {
-			MessageBox::Show(ex->Message);
-		}
+		//	while (myReader->Read()) {
+		//		String^ teamId = myReader->GetString("Team_Id");
+		//		insertPlayerTeamId(teamId, textBox2->Text);
+		//		//break;
+		//	}
+		//	myReader->Close();
+		//}
+		//catch (Exception^ex) {
+		//	MessageBox::Show(ex->Message);
+		//}
 
 		fillListBox2();	//adds values to the Store of Player
 		fillListBox3();
