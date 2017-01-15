@@ -709,6 +709,27 @@ namespace CricRec {
 		catch (Exception^ex) {
 			MessageBox::Show(ex->Message);
 		}
+
+
+		MySqlCommand^ cmdDataBase5 = gcnew MySqlCommand("insert into tournament_teams (Tournament_Id, Team_Id) values ('"+torID+"','"+textBox4->Text+ "');", conDataBase);
+		MySqlDataReader^ myReader1;
+		try {
+			//conDataBase->Open();
+			myReader1 = cmdDataBase5->ExecuteReader();
+
+			while (myReader1->Read()) {
+				String^ teamId = myReader->GetString("Team_Id");
+				int playerCount = myReader->GetInt32("count(Player_Id)");
+
+				if (playerCount < 11 || playerCount>16) {
+					MessageBox::Show("Team cannot have '" + playerCount + "' number of Player");
+				}
+				else MessageBox::Show("Team Created Successfully!");
+			}
+		}
+		catch (Exception^ex) {
+			MessageBox::Show(ex->Message);
+		}
 	}
 #pragma endregion
 
