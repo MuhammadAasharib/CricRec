@@ -693,12 +693,12 @@ namespace CricRec {
 
 
 		MySqlCommand^ cmdDataBase5 = gcnew MySqlCommand("insert into tournament_teams (Tournament_Id, Team_Id) values ('"+torID+"','"+textBox4->Text+ "');", conDataBase);
-		MySqlDataReader^ myReader1;
+
 		try {
 			//conDataBase->Open();
-			myReader1 = cmdDataBase5->ExecuteReader();
+			myReader = cmdDataBase5->ExecuteReader();
 
-			while (myReader1->Read()) {
+			while (myReader->Read()) {
 				String^ teamId = myReader->GetString("Team_Id");
 				int playerCount = myReader->GetInt32("count(Player_Id)");
 
