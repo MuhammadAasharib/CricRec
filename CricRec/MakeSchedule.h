@@ -430,7 +430,7 @@ namespace CricRec {
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("insert into cricrec.match (Tournament_id,Time_Slot,Venue_Id,Umpire_1_id,Umpire_2_id,Umpire_3_id) values ('" + TournamentID + "','" + DateTime + "','" + Venue + "','" + Umpire1 + "','" + Umpire2 + "','" + Umpire3 + "');", conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("insert into cricrec.match (Tournament_id,Time_Slot,Venue_Id,Umpire_1_id,Umpire_2_id,Umpire_3_id, team1, team2) values ('" + TournamentID + "','" + DateTime + "','" + Venue + "','" + Umpire1 + "','" + Umpire2 + "','" + Umpire3 + "', '"+Team1+"','"+Team2+"');", conDataBase);
 		MySqlDataReader^ myReader;
 		try {
 			conDataBase->Open();
