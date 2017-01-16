@@ -131,7 +131,7 @@ namespace CricRec {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(947, 117);
+			this->button6->Location = System::Drawing::Point(946, 115);
 			this->button6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(123, 55);
@@ -142,7 +142,7 @@ namespace CricRec {
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(1146, 165);
+			this->button7->Location = System::Drawing::Point(1126, 115);
 			this->button7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(140, 55);
@@ -169,7 +169,7 @@ namespace CricRec {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::AppWorkspace;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(954, 361);
+			this->ClientSize = System::Drawing::Size(1180, 361);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
@@ -184,6 +184,7 @@ namespace CricRec {
 			this->Name = L"MainWindow";
 			this->Text = L"MainWindow";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MainWindow::MainWindow_FormClosed);
+			this->Load += gcnew System::EventHandler(this, &MainWindow::MainWindow_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -233,6 +234,8 @@ private: System::Void button7_Click(System::Object^  sender, System::EventArgs^ 
 	Hide();
 	form->ShowDialog();
 	Show();
+}
+private: System::Void MainWindow_Load(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
