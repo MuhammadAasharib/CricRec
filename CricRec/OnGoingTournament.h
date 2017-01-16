@@ -1,5 +1,6 @@
 #pragma once
 #include "SelectedTouranament.h"
+#include "ViewSchedule.h"
 
 namespace CricRec {
 
@@ -110,7 +111,7 @@ namespace CricRec {
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select Name from cricrec.tournament where End_Date is NULL;", conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select Name from cricrec.tournament where End_Date is not NULL;", conDataBase);
 
 		MySqlDataReader^ myReader;
 		try {

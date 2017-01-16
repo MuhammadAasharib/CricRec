@@ -63,6 +63,9 @@
     <ClInclude Include="MakeSchedule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ViewSchedule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Login.cpp">
@@ -113,6 +116,9 @@
     <ClCompile Include="MakeSchedule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ViewSchedule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddVenue.resx">
@@ -139,9 +145,6 @@
     <EmbeddedResource Include="OnGoingTournament.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewPlayer.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="ViewTournament.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
@@ -149,6 +152,21 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="AddAdmin.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUmpire.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeSchedule.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeTeam.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectedTouranament.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPlayer1.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

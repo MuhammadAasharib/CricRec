@@ -1,4 +1,5 @@
 #pragma once
+#include "ViewSchedule.h"
 
 namespace CricRec {
 
@@ -16,6 +17,7 @@ namespace CricRec {
 	public ref class SelectedTouranament : public System::Windows::Forms::Form
 	{
 	public:
+		String^ selectedTor;
 		SelectedTouranament(void)
 		{
 			InitializeComponent();
@@ -26,7 +28,7 @@ namespace CricRec {
 
 		SelectedTouranament(String^ name) {
 			InitializeComponent();
-
+			selectedTor = name;
 		}
 
 	protected:
@@ -133,6 +135,10 @@ namespace CricRec {
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	ViewSchedule^ form = gcnew ViewSchedule(selectedTor);
+	Hide();
+	form->ShowDialog();
+
 }
 };
 }
