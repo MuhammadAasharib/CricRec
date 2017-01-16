@@ -169,5 +169,8 @@
     <EmbeddedResource Include="ViewPlayer1.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewSchedule.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
