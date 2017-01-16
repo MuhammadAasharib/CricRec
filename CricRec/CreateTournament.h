@@ -304,7 +304,46 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 	
 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-	MessageBox::Show("tournament Created");
+	String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select count(match_Id) from cricrec.match where tournament_Id = '"+textBox2->Text+"';", conDataBase);
+	MySqlCommand^ cmdDataBase1 = gcnew MySqlCommand("select Tournament_Id,count(team_Id) from cricrec.tournament_teams group by tournament_Id having tournament_Id = '"+textBox2->Text+"';", conDataBase);
+	MySqlDataReader^ myReader;
+	String^ countMatch;
+	String^ countTeam;
+	try {
+		conDataBase->Open();
+		myReader = cmdDataBase->ExecuteReader();
+		while (myReader->Read()) {
+			countMatch = myReader->GetInt32("count(match_Id)").ToString();
+		}
+		myReader->Close();
+	}
+	catch (Exception^ex) {
+		MessageBox::Show(ex->Message);
+	}
+	int countMat = Int32::Parse(countMatch);
+	try {
+		myReader = cmdDataBase1->ExecuteReader();
+		while (myReader->Read()) {
+			countTeam = myReader->GetInt32("count(team_Id)").ToString();
+		}
+		myReader->Close();
+	}
+	catch (Exception^ex) {
+		MessageBox::Show(ex->Message);
+	}
+	int countTem = Int32::Parse(countTeam);
+
+	if (countMat < 3) {
+		MessageBox::Show("Please add 3 or more matches in tournament");
+	}
+
+	else if (countTem < 3) {
+		MessageBox::Show("Please add atleast 3 teams to tournament");
+	}
+	
+	else MessageBox::Show("tournament Created");
 }
 };
 }

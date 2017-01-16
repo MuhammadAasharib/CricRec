@@ -77,7 +77,7 @@ namespace CricRec {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(68, 115);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(123, 57);
 			this->button1->TabIndex = 0;
@@ -88,7 +88,7 @@ namespace CricRec {
 			// button2
 			// 
 			this->button2->Location = System::Drawing::Point(248, 115);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(132, 55);
 			this->button2->TabIndex = 1;
@@ -99,7 +99,7 @@ namespace CricRec {
 			// button3
 			// 
 			this->button3->Location = System::Drawing::Point(429, 115);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(128, 57);
 			this->button3->TabIndex = 2;
@@ -110,7 +110,7 @@ namespace CricRec {
 			// button4
 			// 
 			this->button4->Location = System::Drawing::Point(602, 115);
-			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(124, 55);
 			this->button4->TabIndex = 3;
@@ -121,7 +121,7 @@ namespace CricRec {
 			// button5
 			// 
 			this->button5->Location = System::Drawing::Point(765, 115);
-			this->button5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button5->Margin = System::Windows::Forms::Padding(4);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(130, 55);
 			this->button5->TabIndex = 4;
@@ -132,7 +132,7 @@ namespace CricRec {
 			// button6
 			// 
 			this->button6->Location = System::Drawing::Point(946, 115);
-			this->button6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button6->Margin = System::Windows::Forms::Padding(4);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(123, 55);
 			this->button6->TabIndex = 5;
@@ -143,7 +143,7 @@ namespace CricRec {
 			// button7
 			// 
 			this->button7->Location = System::Drawing::Point(1126, 115);
-			this->button7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button7->Margin = System::Windows::Forms::Padding(4);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(140, 55);
 			this->button7->TabIndex = 6;
@@ -169,7 +169,7 @@ namespace CricRec {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::AppWorkspace;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1180, 361);
+			this->ClientSize = System::Drawing::Size(1312, 361);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
@@ -180,7 +180,7 @@ namespace CricRec {
 			this->Controls->Add(this->button1);
 			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MainWindow";
 			this->Text = L"MainWindow";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MainWindow::MainWindow_FormClosed);

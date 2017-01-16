@@ -87,22 +87,22 @@ namespace CricRec {
 			// columnHeader
 			// 
 			this->columnHeader->Text = L"Tournament_Id";
-			this->columnHeader->Width = 90;
+			this->columnHeader->Width = 110;
 			// 
 			// columnHeader1
 			// 
 			this->columnHeader1->Text = L"Name";
-			this->columnHeader1->Width = 128;
+			this->columnHeader1->Width = 154;
 			// 
 			// columnHeader2
 			// 
 			this->columnHeader2->Text = L"Start_Date";
-			this->columnHeader2->Width = 100;
+			this->columnHeader2->Width = 127;
 			// 
 			// columnHeader3
 			// 
 			this->columnHeader3->Text = L"EndDate";
-			this->columnHeader3->Width = 122;
+			this->columnHeader3->Width = 68;
 			// 
 			// columnHeader4
 			// 
@@ -119,9 +119,9 @@ namespace CricRec {
 			});
 			this->listView1->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->listView1->Location = System::Drawing::Point(-9, 1);
+			this->listView1->Location = System::Drawing::Point(-8, 0);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(647, 268);
+			this->listView1->Size = System::Drawing::Size(646, 268);
 			this->listView1->TabIndex = 2;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
@@ -132,7 +132,7 @@ namespace CricRec {
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ButtonShadow;
-			this->ClientSize = System::Drawing::Size(637, 301);
+			this->ClientSize = System::Drawing::Size(638, 269);
 			this->Controls->Add(this->listView1);
 			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
