@@ -32,8 +32,8 @@ namespace CricRec {
 		{
 			InitializeComponent();
 			torID = TournamentId;
-			/*fillListBox2();
-			fillListBox3();*/
+			//fillListBox2();
+			/*fillListBox3();*/
 
 			//
 			//TODO: Add the constructor code here
@@ -587,7 +587,7 @@ namespace CricRec {
 		String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.player where Team_Id is NULL;", conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from cricrec.player where Team_Id = '0';", conDataBase);
 
 		MySqlDataReader^ myReader;
 		try {
@@ -686,13 +686,14 @@ namespace CricRec {
 				}
 				else MessageBox::Show("Team Created Successfully!");
 			}
+			myReader->Close();
 		}
 		catch (Exception^ex) {
 			MessageBox::Show(ex->Message);
 		}
 
 
-		MySqlCommand^ cmdDataBase5 = gcnew MySqlCommand("insert into tournament_teams (Tournament_Id, Team_Id) values ('"+torID+"','"+textBox4->Text+ "');", conDataBase);
+		MySqlCommand^ cmdDataBase5 = gcnew MySqlCommand("insert into cricrec.tournament_teams (Tournament_Id, Team_Id) values ('"+torID+"','"+textBox4->Text+ "');", conDataBase);
 
 		try {
 			//conDataBase->Open();
@@ -707,6 +708,7 @@ namespace CricRec {
 				}
 				else MessageBox::Show("Team Created Successfully!");
 			}
+			myReader->Close();
 		}
 		catch (Exception^ex) {
 			MessageBox::Show(ex->Message);
@@ -777,9 +779,10 @@ namespace CricRec {
 		//	MessageBox::Show(ex->Message);
 		//}
 
+
+	//	teamAddedPlayer();	//adds values to the Team
 		fillListBox2();	//adds values to the Store of Player
 		fillListBox3();
-		teamAddedPlayer();	//adds values to the Team
 
 	}
 

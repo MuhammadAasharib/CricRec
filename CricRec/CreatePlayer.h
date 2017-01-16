@@ -163,7 +163,7 @@ namespace CricRec {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Batsman", L"Bowler", L"WicketKepper", L"All Rounder" });
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Batsman", L"Bowler", L"Wicket Keeper", L"All Rounder" });
 			this->comboBox1->Location = System::Drawing::Point(149, 101);
 			this->comboBox1->MaxDropDownItems = 4;
 			this->comboBox1->Name = L"comboBox1";
@@ -202,25 +202,25 @@ namespace CricRec {
 
 		if (comboBox1->SelectedItem->Equals("Batsman")) {
 
-			cmdDataBase = gcnew MySqlCommand("INSERT INTO cricrec.player (name, age,Player_type_id, Preffered_Batting_Hand, Preffered_Bowling_Hand, Team_Id, Batting_Avg, Catches, Runs,Strike_Rate, Fifties, Hundred, RunOut, Economy, Wickets, Stumps) values ('" + this->textBox1->Text + "','" + this->textBox2->Text + "', '1' ,'" + this->textBox4->Text + "','" + this->textBox5->Text + "' , 0,0,0,0,0,0,0,0,0,0,0);", conDataBase);
+			cmdDataBase = gcnew MySqlCommand("INSERT INTO cricrec.player (name, age,Player_type_id, Preffered_Batting_Hand, Preffered_Bowling_Hand, Team_Id, Batting_Avg, Catches, Runs,Strike_Rate, Fifties, Hundred, RunOut, Economy, Wickets, Stumps) values ('" + this->textBox1->Text + "','" + this->textBox2->Text + "', '1' ,'" + this->textBox4->Text + "','" + this->textBox5->Text + "' , 0 ,0, 0, 0, 0, 0, 0, 0, 0, 0, 0);", conDataBase);
 			MessageBox::Show("Player Added Sucessfully");
 		}
 
 		if (comboBox1->SelectedItem->Equals("Bowler")) {
 
-			cmdDataBase = gcnew MySqlCommand("INSERT INTO cricrec.player(name, age, Player_type_id, Preffered_Batting_Hand, Preffered_Bowling_Hand, Team_Id, Batting_Avg, Catches, Runs, Strike_Rate, Fifties, Hundred, RunOut, Economy, Wickets, Stumps) values('" + this->textBox1->Text + "', '" + this->textBox2->Text + "', '2', '" + this->textBox4->Text + "', '" + this->textBox5->Text + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) values ('" + this->textBox1->Text + "','" + this->textBox2->Text + "', '1' ,'" + this->textBox4->Text + "','" + this->textBox5->Text + "' , 0,0,0,0,0,0,0,0,0,0,0);", conDataBase);
+			cmdDataBase = gcnew MySqlCommand("INSERT INTO cricrec.player(name, age, Player_type_id, Preffered_Batting_Hand, Preffered_Bowling_Hand, Team_Id, Batting_Avg, Catches, Runs, Strike_Rate, Fifties, Hundred, RunOut, Economy, Wickets, Stumps) values('" + this->textBox1->Text + "', '" + this->textBox2->Text + "', '2', '" + this->textBox4->Text + "', '" + this->textBox5->Text + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);", conDataBase);
 			MessageBox::Show("Player Added Sucessfully");
 		}
 
 		if (comboBox1->SelectedItem->Equals("Wicket Keeper")) {
 
-			cmdDataBase = gcnew MySqlCommand("INSERT INTO cricrec.player(name, age, Player_type_id, Preffered_Batting_Hand, Preffered_Bowling_Hand, Team_Id, Batting_Avg, Catches, Runs, Strike_Rate, Fifties, Hundred, RunOut, Economy, Wickets, Stumps) values('" + this->textBox1->Text + "', '" + this->textBox2->Text + "', '3', '" + this->textBox4->Text + "', '" + this->textBox5->Text + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) values('" + this->textBox1->Text + "', '" + this->textBox2->Text + "', '1', '" + this->textBox4->Text + "', '" + this->textBox5->Text + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0); ", conDataBase);
+			cmdDataBase = gcnew MySqlCommand("INSERT INTO cricrec.player(name, age, Player_type_id, Preffered_Batting_Hand, Preffered_Bowling_Hand, Team_Id, Batting_Avg, Catches, Runs, Strike_Rate, Fifties, Hundred, RunOut, Economy, Wickets, Stumps) values('" + this->textBox1->Text + "', '" + this->textBox2->Text + "', '3', '" + this->textBox4->Text + "', '" + this->textBox5->Text + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0); ", conDataBase);
 			MessageBox::Show("Player Added Sucessfully");
 		}
 
 		if (comboBox1->SelectedItem->Equals("All Rounder")) {
 
-			cmdDataBase = gcnew MySqlCommand("INSERT INTO cricrec.player(name, age, Player_type_id, Preffered_Batting_Hand, Preffered_Bowling_Hand, Team_Id, Batting_Avg, Catches, Runs, Strike_Rate, Fifties, Hundred, RunOut, Economy, Wickets, Stumps) values('" + this->textBox1->Text + "', '" + this->textBox2->Text + "', '4', '" + this->textBox4->Text + "', '" + this->textBox5->Text + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) values ('" + this->textBox1->Text + "','" + this->textBox2->Text + "', '1' ,'" + this->textBox4->Text + "','" + this->textBox5->Text + "' , 0,0,0,0,0,0,0,0,0,0,0);", conDataBase);
+			cmdDataBase = gcnew MySqlCommand("INSERT INTO cricrec.player(name, age, Player_type_id, Preffered_Batting_Hand, Preffered_Bowling_Hand, Team_Id, Batting_Avg, Catches, Runs, Strike_Rate, Fifties, Hundred, RunOut, Economy, Wickets, Stumps) values('" + this->textBox1->Text + "', '" + this->textBox2->Text + "', '4', '" + this->textBox4->Text + "', '" + this->textBox5->Text + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);", conDataBase);
 			MessageBox::Show("Player Added Sucessfully");
 		}
 
