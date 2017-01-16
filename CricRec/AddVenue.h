@@ -55,6 +55,7 @@ namespace CricRec {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(AddVenue::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -63,24 +64,28 @@ namespace CricRec {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(24, 35);
+			this->label1->Location = System::Drawing::Point(44, 56);
+			this->label1->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(35, 13);
+			this->label1->Size = System::Drawing::Size(54, 21);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Name";
+			this->label1->Click += gcnew System::EventHandler(this, &AddVenue::label1_Click);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(157, 35);
+			this->textBox1->Location = System::Drawing::Point(288, 56);
+			this->textBox1->Margin = System::Windows::Forms::Padding(5, 5, 5, 5);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
+			this->textBox1->Size = System::Drawing::Size(180, 28);
 			this->textBox1->TabIndex = 2;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(157, 180);
+			this->button1->Location = System::Drawing::Point(288, 290);
+			this->button1->Margin = System::Windows::Forms::Padding(5, 5, 5, 5);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(137, 37);
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"ok";
 			this->button1->UseVisualStyleBackColor = true;
@@ -88,12 +93,17 @@ namespace CricRec {
 			// 
 			// AddVenue
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(11, 21);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(869, 604);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
+			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Margin = System::Windows::Forms::Padding(5, 5, 5, 5);
 			this->Name = L"AddVenue";
 			this->Text = L"AddVenue";
 			this->ResumeLayout(false);
@@ -123,5 +133,7 @@ namespace CricRec {
 		}
 
 	}
+private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }

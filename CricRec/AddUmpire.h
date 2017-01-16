@@ -62,6 +62,7 @@ namespace CricRec {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(AddUmpire::typeid));
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
@@ -78,9 +79,10 @@ namespace CricRec {
 			// listView1
 			// 
 			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->columnHeader1, this->columnHeader2 });
-			this->listView1->Location = System::Drawing::Point(12, 84);
+			this->listView1->Location = System::Drawing::Point(18, 116);
+			this->listView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(213, 184);
+			this->listView1->Size = System::Drawing::Size(318, 253);
 			this->listView1->TabIndex = 0;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
@@ -97,9 +99,10 @@ namespace CricRec {
 			// listView2
 			// 
 			this->listView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->columnHeader, this->columnHeader4 });
-			this->listView2->Location = System::Drawing::Point(411, 84);
+			this->listView2->Location = System::Drawing::Point(616, 116);
+			this->listView2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->listView2->Name = L"listView2";
-			this->listView2->Size = System::Drawing::Size(201, 184);
+			this->listView2->Size = System::Drawing::Size(300, 253);
 			this->listView2->TabIndex = 1;
 			this->listView2->UseCompatibleStateImageBehavior = false;
 			this->listView2->View = System::Windows::Forms::View::Details;
@@ -116,42 +119,47 @@ namespace CricRec {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(465, 68);
+			this->label1->Location = System::Drawing::Point(698, 94);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(86, 13);
+			this->label1->Size = System::Drawing::Size(122, 18);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"Avaliable Umpire";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(81, 68);
+			this->label2->Location = System::Drawing::Point(122, 94);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(74, 13);
+			this->label2->Size = System::Drawing::Size(102, 18);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Added Umpire";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(358, 27);
+			this->textBox1->Location = System::Drawing::Point(537, 37);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
+			this->textBox1->Size = System::Drawing::Size(148, 25);
 			this->textBox1->TabIndex = 4;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(139, 32);
+			this->label3->Location = System::Drawing::Point(208, 44);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(193, 13);
+			this->label3->Size = System::Drawing::Size(276, 18);
 			this->label3->TabIndex = 5;
 			this->label3->Text = L"Enter Umpire Id of Umpire To be Added";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(520, 27);
+			this->button1->Location = System::Drawing::Point(780, 37);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(112, 32);
 			this->button1->TabIndex = 6;
 			this->button1->Text = L"Add";
 			this->button1->UseVisualStyleBackColor = true;
@@ -159,9 +167,11 @@ namespace CricRec {
 			// 
 			// AddUmpire
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(644, 277);
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(966, 384);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->textBox1);
@@ -169,6 +179,9 @@ namespace CricRec {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->listView2);
 			this->Controls->Add(this->listView1);
+			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"AddUmpire";
 			this->Text = L"AddUmpire";
 			this->ResumeLayout(false);

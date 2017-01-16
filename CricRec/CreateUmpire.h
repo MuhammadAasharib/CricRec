@@ -57,6 +57,7 @@ namespace CricRec {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(CreateUmpire::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -67,40 +68,45 @@ namespace CricRec {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(27, 26);
+			this->label1->Location = System::Drawing::Point(44, 36);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(35, 13);
+			this->label1->Size = System::Drawing::Size(48, 18);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Name";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(30, 65);
+			this->label2->Location = System::Drawing::Point(50, 90);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(26, 13);
+			this->label2->Size = System::Drawing::Size(35, 18);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Age";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(136, 18);
+			this->textBox1->Location = System::Drawing::Point(227, 24);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
+			this->textBox1->Size = System::Drawing::Size(164, 25);
 			this->textBox1->TabIndex = 3;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(136, 57);
+			this->textBox2->Location = System::Drawing::Point(227, 78);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 20);
+			this->textBox2->Size = System::Drawing::Size(164, 25);
 			this->textBox2->TabIndex = 4;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(136, 178);
+			this->button1->Location = System::Drawing::Point(227, 247);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(124, 32);
 			this->button1->TabIndex = 6;
 			this->button1->Text = L"ok";
 			this->button1->UseVisualStyleBackColor = true;
@@ -108,14 +114,19 @@ namespace CricRec {
 			// 
 			// CreateUmpire
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(10, 18);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(514, 380);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"CreateUmpire";
 			this->Text = L"CreateUmpire";
 			this->ResumeLayout(false);

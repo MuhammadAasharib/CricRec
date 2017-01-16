@@ -91,12 +91,15 @@ namespace CricRec {
 			// 
 			// listView1
 			// 
+			this->listView1->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(17) {
 				this->columnHeader1, this->columnHeader2,
 					this->columnHeader3, this->columnHeader4, this->columnHeader5, this->columnHeader6, this->columnHeader7, this->columnHeader8,
 					this->columnHeader9, this->columnHeader10, this->columnHeader11, this->columnHeader12, this->columnHeader13, this->columnHeader14,
 					this->columnHeader15, this->columnHeader16, this->columnHeader17
 			});
+			this->listView1->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->listView1->Location = System::Drawing::Point(-1, 0);
 			this->listView1->Name = L"listView1";
 			this->listView1->Size = System::Drawing::Size(968, 263);

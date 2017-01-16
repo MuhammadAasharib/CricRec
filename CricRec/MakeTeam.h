@@ -168,17 +168,19 @@ namespace CricRec {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(225, 19);
+			this->label1->Location = System::Drawing::Point(338, 26);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(65, 13);
+			this->label1->Size = System::Drawing::Size(84, 18);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Team Name";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(395, 19);
+			this->textBox1->Location = System::Drawing::Point(592, 26);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(161, 20);
+			this->textBox1->Size = System::Drawing::Size(240, 25);
 			this->textBox1->TabIndex = 1;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MakeTeam::textBox1_TextChanged);
 			// 
@@ -190,9 +192,10 @@ namespace CricRec {
 					this->columnHeader9, this->columnHeader10, this->columnHeader11, this->columnHeader12, this->columnHeader13, this->columnHeader14,
 					this->columnHeader15, this->columnHeader16
 			});
-			this->listView2->Location = System::Drawing::Point(530, 168);
+			this->listView2->Location = System::Drawing::Point(795, 233);
+			this->listView2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->listView2->Name = L"listView2";
-			this->listView2->Size = System::Drawing::Size(397, 144);
+			this->listView2->Size = System::Drawing::Size(594, 198);
 			this->listView2->TabIndex = 4;
 			this->listView2->UseCompatibleStateImageBehavior = false;
 			this->listView2->View = System::Windows::Forms::View::Details;
@@ -264,26 +267,29 @@ namespace CricRec {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(701, 152);
+			this->label2->Location = System::Drawing::Point(1052, 210);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(82, 13);
+			this->label2->Size = System::Drawing::Size(115, 18);
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"Available Player";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(135, 152);
+			this->label3->Location = System::Drawing::Point(202, 210);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(70, 13);
+			this->label3->Size = System::Drawing::Size(95, 18);
 			this->label3->TabIndex = 6;
 			this->label3->Text = L"Added Player";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(438, 289);
+			this->button1->Location = System::Drawing::Point(657, 400);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(112, 32);
 			this->button1->TabIndex = 7;
 			this->button1->Text = L"Done";
 			this->button1->UseVisualStyleBackColor = true;
@@ -297,9 +303,10 @@ namespace CricRec {
 					this->columnHeader25, this->columnHeader26, this->columnHeader27, this->columnHeader28, this->columnHeader29, this->columnHeader30,
 					this->columnHeader31, this->columnHeader32
 			});
-			this->listView3->Location = System::Drawing::Point(12, 168);
+			this->listView3->Location = System::Drawing::Point(18, 233);
+			this->listView3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->listView3->Name = L"listView3";
-			this->listView3->Size = System::Drawing::Size(400, 144);
+			this->listView3->Size = System::Drawing::Size(598, 198);
 			this->listView3->TabIndex = 8;
 			this->listView3->UseCompatibleStateImageBehavior = false;
 			this->listView3->View = System::Windows::Forms::View::Details;
@@ -372,17 +379,19 @@ namespace CricRec {
 			// 
 			this->label4->AllowDrop = true;
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(197, 88);
+			this->label4->Location = System::Drawing::Point(296, 122);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(123, 13);
+			this->label4->Size = System::Drawing::Size(173, 18);
 			this->label4->TabIndex = 9;
 			this->label4->Text = L"ID of Player to be Added";
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(618, 85);
+			this->button2->Location = System::Drawing::Point(927, 118);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(112, 32);
 			this->button2->TabIndex = 10;
 			this->button2->Text = L"Add";
 			this->button2->UseVisualStyleBackColor = true;
@@ -390,32 +399,36 @@ namespace CricRec {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(395, 85);
+			this->textBox2->Location = System::Drawing::Point(592, 118);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(161, 20);
+			this->textBox2->Size = System::Drawing::Size(240, 25);
 			this->textBox2->TabIndex = 11;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(150, 119);
+			this->label5->Location = System::Drawing::Point(225, 165);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(221, 13);
+			this->label5->Size = System::Drawing::Size(304, 18);
 			this->label5->TabIndex = 12;
 			this->label5->Text = L"ID of Player to be Deleted from selected team";
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(395, 119);
+			this->textBox3->Location = System::Drawing::Point(592, 165);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(161, 20);
+			this->textBox3->Size = System::Drawing::Size(240, 25);
 			this->textBox3->TabIndex = 13;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(618, 119);
+			this->button3->Location = System::Drawing::Point(927, 165);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->Size = System::Drawing::Size(112, 32);
 			this->button3->TabIndex = 14;
 			this->button3->Text = L"Delete";
 			this->button3->UseVisualStyleBackColor = true;
@@ -423,9 +436,10 @@ namespace CricRec {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(618, 19);
+			this->button4->Location = System::Drawing::Point(927, 26);
+			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->Size = System::Drawing::Size(112, 32);
 			this->button4->TabIndex = 15;
 			this->button4->Text = L"Refresh";
 			this->button4->UseVisualStyleBackColor = true;
@@ -434,24 +448,27 @@ namespace CricRec {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(235, 51);
+			this->label6->Location = System::Drawing::Point(352, 71);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(46, 13);
+			this->label6->Size = System::Drawing::Size(63, 18);
 			this->label6->TabIndex = 16;
 			this->label6->Text = L"Team Id";
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(395, 48);
+			this->textBox4->Location = System::Drawing::Point(592, 66);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(161, 20);
+			this->textBox4->Size = System::Drawing::Size(240, 25);
 			this->textBox4->TabIndex = 17;
 			// 
 			// MakeTeam
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(939, 324);
+			this->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->ClientSize = System::Drawing::Size(1362, 449);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->button4);
@@ -468,6 +485,9 @@ namespace CricRec {
 			this->Controls->Add(this->listView2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
+			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MakeTeam";
 			this->ShowInTaskbar = false;
 			this->Text = L"MakeTeam";

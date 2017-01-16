@@ -36,14 +36,28 @@ namespace CricRec {
 				delete components;
 			}
 		}
-
-
-	private: System::Windows::Forms::ListView^  listView1;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader;
+	protected:
 	private: System::Windows::Forms::ColumnHeader^  columnHeader1;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader2;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader3;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader4;
+	private: System::Windows::Forms::ListView^  listView1;
+
+	protected:
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	protected:
@@ -61,26 +75,14 @@ namespace CricRec {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(FinishedTournament::typeid));
 			this->columnHeader = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader4 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->SuspendLayout();
-			// 
-			// listView1
-			// 
-			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(5) {
-				this->columnHeader, this->columnHeader1,
-					this->columnHeader2, this->columnHeader3, this->columnHeader4
-			});
-			this->listView1->Location = System::Drawing::Point(3, -1);
-			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(544, 262);
-			this->listView1->TabIndex = 2;
-			this->listView1->UseCompatibleStateImageBehavior = false;
-			this->listView1->View = System::Windows::Forms::View::Details;
 			// 
 			// columnHeader
 			// 
@@ -107,12 +109,33 @@ namespace CricRec {
 			this->columnHeader4->Text = L"Match_Type_ID";
 			this->columnHeader4->Width = 199;
 			// 
+			// listView1
+			// 
+			this->listView1->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->listView1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"listView1.BackgroundImage")));
+			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(5) {
+				this->columnHeader, this->columnHeader1,
+					this->columnHeader2, this->columnHeader3, this->columnHeader4
+			});
+			this->listView1->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->listView1->Location = System::Drawing::Point(-9, 1);
+			this->listView1->Name = L"listView1";
+			this->listView1->Size = System::Drawing::Size(647, 268);
+			this->listView1->TabIndex = 2;
+			this->listView1->UseCompatibleStateImageBehavior = false;
+			this->listView1->View = System::Windows::Forms::View::Details;
+			this->listView1->SelectedIndexChanged += gcnew System::EventHandler(this, &FinishedTournament::listView1_SelectedIndexChanged);
+			// 
 			// FinishedTournament
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(7, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(546, 261);
+			this->BackColor = System::Drawing::SystemColors::ButtonShadow;
+			this->ClientSize = System::Drawing::Size(637, 301);
 			this->Controls->Add(this->listView1);
+			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->Name = L"FinishedTournament";
 			this->Text = L"FinishedTournament";
 			this->ResumeLayout(false);
@@ -153,5 +176,7 @@ namespace CricRec {
 					 MessageBox::Show(ex->Message);
 				 }
 			 }
-	};
+	private: System::Void listView1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }
