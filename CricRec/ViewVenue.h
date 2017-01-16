@@ -62,17 +62,22 @@ namespace CricRec {
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Location = System::Drawing::Point(13, 13);
+			this->listBox1->ItemHeight = 18;
+			this->listBox1->Location = System::Drawing::Point(20, 18);
+			this->listBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(333, 225);
+			this->listBox1->Size = System::Drawing::Size(498, 310);
 			this->listBox1->TabIndex = 0;
 			// 
 			// ViewVenue
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(358, 261);
+			this->ClientSize = System::Drawing::Size(537, 361);
 			this->Controls->Add(this->listBox1);
+			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"ViewVenue";
 			this->Text = L"ViewVenue";
 			this->Load += gcnew System::EventHandler(this, &ViewVenue::ViewVenue_Load);

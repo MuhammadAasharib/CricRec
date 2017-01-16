@@ -54,15 +54,17 @@ namespace CricRec {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(ViewTournament::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(83, 51);
+			this->button1->Location = System::Drawing::Point(124, 71);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(121, 40);
+			this->button1->Size = System::Drawing::Size(182, 55);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"On Going Tournament";
 			this->button1->UseVisualStyleBackColor = true;
@@ -70,9 +72,10 @@ namespace CricRec {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(83, 147);
+			this->button2->Location = System::Drawing::Point(124, 204);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(119, 40);
+			this->button2->Size = System::Drawing::Size(178, 55);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Finished Tournament";
 			this->button2->UseVisualStyleBackColor = true;
@@ -80,11 +83,15 @@ namespace CricRec {
 			// 
 			// ViewTournament
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(426, 361);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"ViewTournament";
 			this->Text = L"ViewTournament";
 			this->ResumeLayout(false);

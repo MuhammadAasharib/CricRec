@@ -1,4 +1,5 @@
 #pragma once
+#include "ViewSchedule.h"
 
 namespace CricRec {
 
@@ -17,6 +18,7 @@ namespace CricRec {
 	public ref class SelectedTouranament : public System::Windows::Forms::Form
 	{
 	public:
+		String^ selectedTor;
 		SelectedTouranament(void)
 		{
 			InitializeComponent();
@@ -27,7 +29,7 @@ namespace CricRec {
 
 		SelectedTouranament(String^ name) {
 			InitializeComponent();
-
+			selectedTor = name;
 		}
 
 	protected:
@@ -59,6 +61,7 @@ namespace CricRec {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(SelectedTouranament::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -66,9 +69,10 @@ namespace CricRec {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(104, 31);
+			this->button1->Location = System::Drawing::Point(156, 43);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(90, 32);
+			this->button1->Size = System::Drawing::Size(135, 44);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Start Match";
 			this->button1->UseVisualStyleBackColor = true;
@@ -76,9 +80,10 @@ namespace CricRec {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(104, 112);
+			this->button2->Location = System::Drawing::Point(156, 155);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(90, 30);
+			this->button2->Size = System::Drawing::Size(135, 42);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"View Stats";
 			this->button2->UseVisualStyleBackColor = true;
@@ -86,9 +91,10 @@ namespace CricRec {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(104, 186);
+			this->button3->Location = System::Drawing::Point(156, 258);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(90, 32);
+			this->button3->Size = System::Drawing::Size(135, 44);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"View Schedule";
 			this->button3->UseVisualStyleBackColor = true;
@@ -96,12 +102,16 @@ namespace CricRec {
 			// 
 			// SelectedTouranament
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(426, 357);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"SelectedTouranament";
 			this->Text = L"SelectedTouranament";
 			this->ResumeLayout(false);
@@ -138,6 +148,10 @@ namespace CricRec {
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	ViewSchedule^ form = gcnew ViewSchedule(selectedTor);
+	Hide();
+	form->ShowDialog();
+
 }
 };
 }

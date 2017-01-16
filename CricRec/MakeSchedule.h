@@ -117,17 +117,19 @@ namespace CricRec {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(104, 45);
+			this->comboBox1->Location = System::Drawing::Point(156, 62);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->Size = System::Drawing::Size(180, 26);
 			this->comboBox1->TabIndex = 0;
 			// 
 			// comboBox2
 			// 
 			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(591, 45);
+			this->comboBox2->Location = System::Drawing::Point(886, 62);
+			this->comboBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(121, 21);
+			this->comboBox2->Size = System::Drawing::Size(180, 26);
 			this->comboBox2->TabIndex = 1;
 			// 
 			// label1
@@ -135,7 +137,8 @@ namespace CricRec {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(396, 39);
+			this->label1->Location = System::Drawing::Point(594, 54);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(40, 25);
 			this->label1->TabIndex = 2;
@@ -144,89 +147,99 @@ namespace CricRec {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(142, 26);
+			this->label2->Location = System::Drawing::Point(213, 36);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(43, 13);
+			this->label2->Size = System::Drawing::Size(61, 18);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"TEAM1";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(623, 26);
+			this->label3->Location = System::Drawing::Point(934, 36);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(43, 13);
+			this->label3->Size = System::Drawing::Size(61, 18);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"TEAM2";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(104, 100);
+			this->label4->Location = System::Drawing::Point(156, 138);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(44, 13);
+			this->label4->Size = System::Drawing::Size(63, 18);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"VENUE";
 			// 
 			// comboBox3
 			// 
 			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(424, 92);
+			this->comboBox3->Location = System::Drawing::Point(636, 127);
+			this->comboBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(121, 21);
+			this->comboBox3->Size = System::Drawing::Size(180, 26);
 			this->comboBox3->TabIndex = 6;
 			// 
 			// dateTimePicker1
 			// 
 			this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd H:m:s";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker1->Location = System::Drawing::Point(217, 145);
+			this->dateTimePicker1->Location = System::Drawing::Point(326, 201);
+			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(200, 20);
+			this->dateTimePicker1->Size = System::Drawing::Size(298, 25);
 			this->dateTimePicker1->TabIndex = 7;
 			this->dateTimePicker1->Value = System::DateTime(2017, 1, 10, 0, 0, 0, 0);
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(104, 145);
+			this->label5->Location = System::Drawing::Point(156, 201);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(36, 13);
+			this->label5->Size = System::Drawing::Size(52, 18);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"DATE";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(101, 202);
+			this->label6->Location = System::Drawing::Point(152, 280);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(58, 13);
+			this->label6->Size = System::Drawing::Size(84, 18);
 			this->label6->TabIndex = 9;
 			this->label6->Text = L"UMPIRE 1";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(101, 230);
+			this->label7->Location = System::Drawing::Point(152, 318);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(58, 13);
+			this->label7->Size = System::Drawing::Size(84, 18);
 			this->label7->TabIndex = 10;
 			this->label7->Text = L"UMPIRE 2";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(101, 258);
+			this->label8->Location = System::Drawing::Point(152, 357);
+			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(58, 13);
+			this->label8->Size = System::Drawing::Size(84, 18);
 			this->label8->TabIndex = 12;
 			this->label8->Text = L"UMPIRE 3";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(676, 250);
+			this->button1->Location = System::Drawing::Point(1014, 346);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(121, 23);
+			this->button1->Size = System::Drawing::Size(182, 32);
 			this->button1->TabIndex = 13;
 			this->button1->Text = L"CONFIRM MATCH";
 			this->button1->UseVisualStyleBackColor = true;
@@ -234,63 +247,71 @@ namespace CricRec {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(248, 194);
+			this->textBox1->Location = System::Drawing::Point(372, 269);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
+			this->textBox1->Size = System::Drawing::Size(148, 25);
 			this->textBox1->TabIndex = 14;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(248, 222);
+			this->textBox2->Location = System::Drawing::Point(372, 307);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 20);
+			this->textBox2->Size = System::Drawing::Size(148, 25);
 			this->textBox2->TabIndex = 15;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(248, 250);
+			this->textBox3->Location = System::Drawing::Point(372, 346);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(100, 20);
+			this->textBox3->Size = System::Drawing::Size(148, 25);
 			this->textBox3->TabIndex = 16;
 			// 
 			// comboBox4
 			// 
 			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Location = System::Drawing::Point(424, 221);
+			this->comboBox4->Location = System::Drawing::Point(636, 306);
+			this->comboBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(121, 21);
+			this->comboBox4->Size = System::Drawing::Size(180, 26);
 			this->comboBox4->TabIndex = 17;
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(448, 202);
+			this->label9->Location = System::Drawing::Point(672, 280);
+			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(76, 13);
+			this->label9->Size = System::Drawing::Size(112, 18);
 			this->label9->TabIndex = 18;
 			this->label9->Text = L"List of Umpires";
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(450, 76);
+			this->label10->Location = System::Drawing::Point(675, 105);
+			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(74, 13);
+			this->label10->Size = System::Drawing::Size(104, 18);
 			this->label10->TabIndex = 19;
 			this->label10->Text = L"List of Venues";
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(248, 92);
+			this->textBox4->Location = System::Drawing::Point(372, 127);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(100, 20);
+			this->textBox4->Size = System::Drawing::Size(148, 25);
 			this->textBox4->TabIndex = 20;
 			// 
 			// MakeSchedule
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(818, 299);
+			this->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->ClientSize = System::Drawing::Size(1227, 414);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->label9);
@@ -311,6 +332,9 @@ namespace CricRec {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->comboBox2);
 			this->Controls->Add(this->comboBox1);
+			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MakeSchedule";
 			this->Text = L"MakeSchedule";
 			this->ResumeLayout(false);
