@@ -10,6 +10,7 @@ namespace CricRec {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace MySql::Data::MySqlClient;
+	using namespace System::Diagnostics;
 
 	/// <summary>
 	/// Summary for SelectedTouranament
@@ -139,6 +140,11 @@ namespace CricRec {
 	}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Hide();
+		auto StartLiveScoreManager = 
+			Process::Start("C:\\Users\\Aasharib\\OneDrive\\Third Semester\\Database\\project\\new\\LiveScoreManager\\LiveScoreManager\\CricketScoreBoard-ESP-DBS.exe");
+		StartLiveScoreManager->WaitForExit();
+		this->Show();
 	}
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 }
