@@ -46,6 +46,13 @@ namespace CricRec {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::TextBox^  textBox2;
 	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
+	private: System::Windows::Forms::DateTimePicker^  dateTimePicker2;
+	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::ComboBox^  comboBox1;
 	protected:
 
 	private:
@@ -69,6 +76,13 @@ namespace CricRec {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -93,7 +107,7 @@ namespace CricRec {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(366, 197);
+			this->button4->Location = System::Drawing::Point(146, 226);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 3;
@@ -143,11 +157,79 @@ namespace CricRec {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &CreateTournament::button2_Click);
 			// 
+			// dateTimePicker1
+			// 
+			this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd";
+			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->dateTimePicker1->Location = System::Drawing::Point(453, 61);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(200, 20);
+			this->dateTimePicker1->TabIndex = 9;
+			// 
+			// dateTimePicker2
+			// 
+			this->dateTimePicker2->CustomFormat = L"yyyy-MM-dd";
+			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->dateTimePicker2->Location = System::Drawing::Point(453, 106);
+			this->dateTimePicker2->Name = L"dateTimePicker2";
+			this->dateTimePicker2->Size = System::Drawing::Size(200, 20);
+			this->dateTimePicker2->TabIndex = 10;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(453, 154);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(100, 20);
+			this->textBox3->TabIndex = 11;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(366, 61);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(55, 13);
+			this->label3->TabIndex = 12;
+			this->label3->Text = L"Start Date";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(366, 106);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(52, 13);
+			this->label4->TabIndex = 13;
+			this->label4->Text = L"End Date";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(366, 154);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(76, 13);
+			this->label5->TabIndex = 14;
+			this->label5->Text = L"Match Type Id";
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"1\t10 Overs", L"2\t20 Overs", L"3\t50 Overs" });
+			this->comboBox1->Location = System::Drawing::Point(604, 154);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(49, 21);
+			this->comboBox1->TabIndex = 15;
+			// 
 			// CreateTournament
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(670, 261);
+			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->dateTimePicker2);
+			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label2);
@@ -178,10 +260,13 @@ namespace CricRec {
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 	String^ tournamentName = textBox1->Text;
 	String^ tournamentID = textBox2->Text;
+	String^ startDate = dateTimePicker1->Text;
+	String^ endDate = dateTimePicker2->Text;
+	String^ matchTypeId = textBox3->Text;
 	String^ constring = L"datasource = localhost; port = 3306; username = CricRec; password = cricrec";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 
-	MySqlCommand^ cmdDataBase = gcnew MySqlCommand("insert into cricrec.tournament (Tournament_id,Name) values ('" + tournamentID + "','" + tournamentName + "');", conDataBase);
+	MySqlCommand^ cmdDataBase = gcnew MySqlCommand("insert into cricrec.tournament (Tournament_id,Name,Start_Date,End_Date,Match_Type_Id) values ('" + tournamentID + "','" + tournamentName + "', '"+startDate+"','"+endDate+"','"+matchTypeId+"');", conDataBase);
 	MySqlDataReader^ myReader;
 	try {
 		conDataBase->Open();
@@ -190,7 +275,7 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 		while (myReader->Read()) {
 
 		}
-		MessageBox::Show("Touranment Created");
+		MessageBox::Show("Touranment Created now u can add teams and shedule");
 	}
 	catch (Exception^ex) {
 		MessageBox::Show(ex->Message);
