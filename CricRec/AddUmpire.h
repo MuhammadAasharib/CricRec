@@ -80,7 +80,7 @@ namespace CricRec {
 			// 
 			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->columnHeader1, this->columnHeader2 });
 			this->listView1->Location = System::Drawing::Point(18, 116);
-			this->listView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->listView1->Margin = System::Windows::Forms::Padding(4);
 			this->listView1->Name = L"listView1";
 			this->listView1->Size = System::Drawing::Size(318, 253);
 			this->listView1->TabIndex = 0;
@@ -100,7 +100,7 @@ namespace CricRec {
 			// 
 			this->listView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->columnHeader, this->columnHeader4 });
 			this->listView2->Location = System::Drawing::Point(616, 116);
-			this->listView2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->listView2->Margin = System::Windows::Forms::Padding(4);
 			this->listView2->Name = L"listView2";
 			this->listView2->Size = System::Drawing::Size(300, 253);
 			this->listView2->TabIndex = 1;
@@ -139,7 +139,7 @@ namespace CricRec {
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(537, 37);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(148, 25);
 			this->textBox1->TabIndex = 4;
@@ -157,7 +157,7 @@ namespace CricRec {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(780, 37);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(112, 32);
 			this->button1->TabIndex = 6;
@@ -181,7 +181,8 @@ namespace CricRec {
 			this->Controls->Add(this->listView1);
 			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
+			this->MaximizeBox = false;
 			this->Name = L"AddUmpire";
 			this->Text = L"AddUmpire";
 			this->ResumeLayout(false);

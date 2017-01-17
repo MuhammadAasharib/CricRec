@@ -89,7 +89,7 @@ namespace CricRec {
 			// UserTextBox
 			// 
 			this->UserTextBox->Location = System::Drawing::Point(223, 47);
-			this->UserTextBox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->UserTextBox->Margin = System::Windows::Forms::Padding(4);
 			this->UserTextBox->Name = L"UserTextBox";
 			this->UserTextBox->Size = System::Drawing::Size(132, 24);
 			this->UserTextBox->TabIndex = 2;
@@ -97,7 +97,7 @@ namespace CricRec {
 			// PassTextBox
 			// 
 			this->PassTextBox->Location = System::Drawing::Point(223, 106);
-			this->PassTextBox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->PassTextBox->Margin = System::Windows::Forms::Padding(4);
 			this->PassTextBox->Name = L"PassTextBox";
 			this->PassTextBox->PasswordChar = '*';
 			this->PassTextBox->Size = System::Drawing::Size(132, 24);
@@ -106,7 +106,7 @@ namespace CricRec {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(223, 176);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(100, 30);
 			this->button1->TabIndex = 4;
@@ -117,7 +117,7 @@ namespace CricRec {
 			// button2
 			// 
 			this->button2->Location = System::Drawing::Point(223, 239);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(100, 30);
 			this->button2->TabIndex = 5;
@@ -140,7 +140,8 @@ namespace CricRec {
 			this->Controls->Add(this->label1);
 			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
+			this->MaximizeBox = false;
 			this->Name = L"Login";
 			this->Text = L"Login";
 			this->ResumeLayout(false);

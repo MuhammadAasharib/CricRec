@@ -75,7 +75,7 @@ namespace CricRec {
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(288, 56);
-			this->textBox1->Margin = System::Windows::Forms::Padding(5, 5, 5, 5);
+			this->textBox1->Margin = System::Windows::Forms::Padding(5);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(180, 28);
 			this->textBox1->TabIndex = 2;
@@ -83,7 +83,7 @@ namespace CricRec {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(288, 290);
-			this->button1->Margin = System::Windows::Forms::Padding(5, 5, 5, 5);
+			this->button1->Margin = System::Windows::Forms::Padding(5);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(137, 37);
 			this->button1->TabIndex = 4;
@@ -103,7 +103,8 @@ namespace CricRec {
 			this->Controls->Add(this->label1);
 			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Margin = System::Windows::Forms::Padding(5, 5, 5, 5);
+			this->Margin = System::Windows::Forms::Padding(5);
+			this->MaximizeBox = false;
 			this->Name = L"AddVenue";
 			this->Text = L"AddVenue";
 			this->ResumeLayout(false);

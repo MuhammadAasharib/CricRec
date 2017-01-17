@@ -89,7 +89,7 @@ namespace CricRec {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(103, 84);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(169, 61);
 			this->button1->TabIndex = 0;
@@ -100,7 +100,7 @@ namespace CricRec {
 			// button3
 			// 
 			this->button3->Location = System::Drawing::Point(103, 213);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(169, 64);
 			this->button3->TabIndex = 2;
@@ -111,7 +111,7 @@ namespace CricRec {
 			// button4
 			// 
 			this->button4->Location = System::Drawing::Point(243, 313);
-			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(124, 32);
 			this->button4->TabIndex = 3;
@@ -132,7 +132,7 @@ namespace CricRec {
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(282, 26);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(164, 25);
 			this->textBox1->TabIndex = 5;
@@ -150,7 +150,7 @@ namespace CricRec {
 			// textBox2
 			// 
 			this->textBox2->Location = System::Drawing::Point(756, 26);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(164, 25);
 			this->textBox2->TabIndex = 7;
@@ -158,7 +158,7 @@ namespace CricRec {
 			// button2
 			// 
 			this->button2->Location = System::Drawing::Point(1007, 24);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(51, 32);
 			this->button2->TabIndex = 8;
@@ -171,7 +171,7 @@ namespace CricRec {
 			this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker1->Location = System::Drawing::Point(756, 84);
-			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(331, 25);
 			this->dateTimePicker1->TabIndex = 9;
@@ -181,7 +181,7 @@ namespace CricRec {
 			this->dateTimePicker2->CustomFormat = L"yyyy-MM-dd";
 			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker2->Location = System::Drawing::Point(756, 147);
-			this->dateTimePicker2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dateTimePicker2->Margin = System::Windows::Forms::Padding(4);
 			this->dateTimePicker2->Name = L"dateTimePicker2";
 			this->dateTimePicker2->Size = System::Drawing::Size(331, 25);
 			this->dateTimePicker2->TabIndex = 10;
@@ -189,7 +189,7 @@ namespace CricRec {
 			// textBox3
 			// 
 			this->textBox3->Location = System::Drawing::Point(756, 213);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(164, 25);
 			this->textBox3->TabIndex = 11;
@@ -229,7 +229,7 @@ namespace CricRec {
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"1\t10 Overs", L"2\t20 Overs", L"3\t50 Overs" });
 			this->comboBox1->Location = System::Drawing::Point(1007, 213);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(80, 26);
 			this->comboBox1->TabIndex = 15;
@@ -258,7 +258,8 @@ namespace CricRec {
 			this->Controls->Add(this->button1);
 			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
+			this->MaximizeBox = false;
 			this->Name = L"CreateTournament";
 			this->Text = L"CreateTournament";
 			this->ResumeLayout(false);

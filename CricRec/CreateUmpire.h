@@ -88,7 +88,7 @@ namespace CricRec {
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(227, 24);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(164, 25);
 			this->textBox1->TabIndex = 3;
@@ -96,7 +96,7 @@ namespace CricRec {
 			// textBox2
 			// 
 			this->textBox2->Location = System::Drawing::Point(227, 78);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(164, 25);
 			this->textBox2->TabIndex = 4;
@@ -104,7 +104,7 @@ namespace CricRec {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(227, 247);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(124, 32);
 			this->button1->TabIndex = 6;
@@ -126,7 +126,8 @@ namespace CricRec {
 			this->Controls->Add(this->label1);
 			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
+			this->MaximizeBox = false;
 			this->Name = L"CreateUmpire";
 			this->Text = L"CreateUmpire";
 			this->ResumeLayout(false);

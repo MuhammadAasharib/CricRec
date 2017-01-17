@@ -147,6 +147,7 @@ namespace CricRec {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(749, 261);
 			this->Controls->Add(this->listView1);
+			this->MaximizeBox = false;
 			this->Name = L"ViewSchedule";
 			this->Text = L"ViewSchedule";
 			this->ResumeLayout(false);

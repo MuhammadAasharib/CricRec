@@ -86,7 +86,7 @@ namespace CricRec {
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(244, 62);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(148, 25);
 			this->textBox1->TabIndex = 2;
@@ -94,7 +94,7 @@ namespace CricRec {
 			// textBox2
 			// 
 			this->textBox2->Location = System::Drawing::Point(244, 136);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(148, 25);
 			this->textBox2->TabIndex = 3;
@@ -103,7 +103,7 @@ namespace CricRec {
 			// 
 			this->button1->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->button1->Location = System::Drawing::Point(244, 212);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(112, 32);
 			this->button1->TabIndex = 4;
@@ -126,7 +126,8 @@ namespace CricRec {
 			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
+			this->MaximizeBox = false;
 			this->Name = L"AddAdmin";
 			this->Text = L"AddAdmin";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &AddAdmin::AddAdmin_FormClosed);

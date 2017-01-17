@@ -136,6 +136,7 @@ namespace CricRec {
 			this->Controls->Add(this->listView1);
 			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->MaximizeBox = false;
 			this->Name = L"FinishedTournament";
 			this->Text = L"FinishedTournament";
 			this->ResumeLayout(false);

@@ -174,6 +174,7 @@ namespace CricRec {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::LightGray;
 			this->ClientSize = System::Drawing::Size(284, 261);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->textBox5);
@@ -186,6 +187,7 @@ namespace CricRec {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox1);
+			this->MaximizeBox = false;
 			this->Name = L"CreatePlayer";
 			this->Text = L"CreatePlayer";
 			this->ResumeLayout(false);

@@ -118,7 +118,7 @@ namespace CricRec {
 			// 
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Location = System::Drawing::Point(156, 62);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(180, 26);
 			this->comboBox1->TabIndex = 0;
@@ -127,7 +127,7 @@ namespace CricRec {
 			// 
 			this->comboBox2->FormattingEnabled = true;
 			this->comboBox2->Location = System::Drawing::Point(886, 62);
-			this->comboBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->comboBox2->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox2->Name = L"comboBox2";
 			this->comboBox2->Size = System::Drawing::Size(180, 26);
 			this->comboBox2->TabIndex = 1;
@@ -178,7 +178,7 @@ namespace CricRec {
 			// 
 			this->comboBox3->FormattingEnabled = true;
 			this->comboBox3->Location = System::Drawing::Point(636, 127);
-			this->comboBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->comboBox3->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(180, 26);
 			this->comboBox3->TabIndex = 6;
@@ -188,7 +188,7 @@ namespace CricRec {
 			this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd H:m:s";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker1->Location = System::Drawing::Point(326, 201);
-			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(298, 25);
 			this->dateTimePicker1->TabIndex = 7;
@@ -237,7 +237,7 @@ namespace CricRec {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(1014, 346);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(182, 32);
 			this->button1->TabIndex = 13;
@@ -248,7 +248,7 @@ namespace CricRec {
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(372, 269);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(148, 25);
 			this->textBox1->TabIndex = 14;
@@ -256,7 +256,7 @@ namespace CricRec {
 			// textBox2
 			// 
 			this->textBox2->Location = System::Drawing::Point(372, 307);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(148, 25);
 			this->textBox2->TabIndex = 15;
@@ -264,7 +264,7 @@ namespace CricRec {
 			// textBox3
 			// 
 			this->textBox3->Location = System::Drawing::Point(372, 346);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(148, 25);
 			this->textBox3->TabIndex = 16;
@@ -273,7 +273,7 @@ namespace CricRec {
 			// 
 			this->comboBox4->FormattingEnabled = true;
 			this->comboBox4->Location = System::Drawing::Point(636, 306);
-			this->comboBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->comboBox4->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox4->Name = L"comboBox4";
 			this->comboBox4->Size = System::Drawing::Size(180, 26);
 			this->comboBox4->TabIndex = 17;
@@ -301,7 +301,7 @@ namespace CricRec {
 			// textBox4
 			// 
 			this->textBox4->Location = System::Drawing::Point(372, 127);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(148, 25);
 			this->textBox4->TabIndex = 20;
@@ -334,7 +334,8 @@ namespace CricRec {
 			this->Controls->Add(this->comboBox1);
 			this->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
+			this->MaximizeBox = false;
 			this->Name = L"MakeSchedule";
 			this->Text = L"MakeSchedule";
 			this->ResumeLayout(false);
